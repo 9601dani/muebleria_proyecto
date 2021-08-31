@@ -35,16 +35,16 @@
             <div style="background-color: lightblue;">
                 <h1> Bienvenido a Administracion</h1>
             </div>
-    <img class="mb-4" src="imagen/imagen.png" alt="" width="100" height="100">
+    <img class="mb-4" src="/Muebleria_Progra/imagen/imagen.png" alt="" width="100" height="100">
+            <div class="text-align" style="font-size: large">
+                <a href="/Muebleria_Progra/">Cerrar Sesion</a>
+            </div>
     <div class="container col-lg-4" style="background-color: aquamarine">
-        <div>
-            
-        </div>
         <div class="row gx-4">
           <div class="col">
             <div class="mb-4">
                 <div style="font-size: 15px;">
-                    <a href="InicioServlet?eleccion=nusuario" class="btn btn-block"> Ingresar Nuevo Usuario</a>
+                    <a href="/Muebleria_Progra/Administracion/creacion_usuario.jsp" class="btn btn-block"> Ingresar Nuevo Usuario</a>
                 </div>
                 
             </div> 
@@ -53,7 +53,7 @@
             <div class="mb-4">
                 <div style="font-size: 15px;">
                     <h3>
-                        <a href="InicioServlet?eleccion=musuario" class="btn btn-block"> Administracion de usuarios</a>
+                        <a href="/Muebleria_Progra/Administracion/mod_usuario.jsp" class="btn btn-block"> Administracion de usuarios</a>
                     </h3>
                     
                 </div>
@@ -63,7 +63,7 @@
           <div class="col">
             <div class="mb-4">
                 <div style="font-size: 15px;">
-                    <a href="*" class="btn btn-block"> Consulta de      Reportes</a>
+                    <a href="*" class="btn btn-block"> Consulta de Reportes</a>
                 </div>
                 
             </div> 

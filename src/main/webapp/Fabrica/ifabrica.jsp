@@ -34,7 +34,7 @@
                 <div style="background-color: lightblue;">
                     <h1> Bienvenido a Fabrica</h1>
                 </div>
-        <img class="mb-4" src="imagen/fabrica.jpg" alt="" width="700" height="100">
+        <img class="mb-4" src="/Muebleria_Progra/imagen/fabrica.jpg" alt="" width="700" height="100">
         <div class="container overflow-hidden" style="background-color:burlywood;">
             <div class="row gx-5">
               <div class="col">

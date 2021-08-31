@@ -33,17 +33,17 @@
   <div style="background-color: lightblue;">
       <h1> Bienvenido a Ventas</h1>
       <div class="text-align" style="font-size: large">
-           <a href="InicioServlet?eleccion=inicio">Cerrar Sesion</a>
+           <a href="/Muebleria_Progra/">Cerrar Sesion</a>
       </div>
   </div>
 <body class="text-center" style="background-color:beige">
-    <img class="mb-4" src="imagen/venta.jpg" alt="" width="700" height="250">
+    <img class="mb-4" src="/Muebleria_Progra/imagen/venta.jpg" alt="" width="700" height="250">
     <div class="container overflow-hidden" style="background-color:burlywood;">
         <div class="row gx-5">
           <div class="col">
             <div class="mb-3">
                 <div style="font-size: 15px;">
-                    <a href="InicioServlet?eleccion=nventa" class="btn"> Relizar Venta</a>
+                    <a href="/Muebleria_Progra/Venta/realizarventa.jsp" class="btn"> Relizar Venta</a>
                 </div>
                 
             </div> 
@@ -52,11 +52,10 @@
             <div class="mb-3">
                 <div style="font-size: 15px;">
                     <h3>
-                        <a href="*" class="btn"> Ver Cliente</a>
+                        <a href="/Muebleria_Progra/Venta/pruebabuscador.jsp" class="btn"> Ver Cliente</a>
                     </h3>
                     
                 </div>
-                
             </div> 
           </div>
           <div class="col">

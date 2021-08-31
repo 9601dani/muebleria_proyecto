@@ -6,6 +6,7 @@
 package com.mycompany.muebleria_progra.servlet.admi;
 
 import com.mycompany.muebleria_progra.clases.Usuario;
+import com.mycompany.muebleria_progra.conexion.Conexion_Sql;
 import com.mycompany.muebleria_progra.manejadoresclases.Manejador_Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -65,9 +66,9 @@ public class ModificacionUsuario extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
             out.println("<t1>" + "Hemos detectado campos vacios" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"CerrarSesion?eleccion=regresar\"> REGRESAR</a>");
+            out.println(" <a href=\"/Muebleria_Progra/Administracion/mod_usuario.jsp\"> REGRESAR</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
@@ -84,9 +85,9 @@ public class ModificacionUsuario extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "Actualmente el nombre de usuario no existe" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"CerrarSesion?eleccion=regresar\"> REGRESAR</a>");
+            out.println(" <a href=\"/Muebleria_Progra/Administracion/mod_usuario.jsp\"> REGRESAR</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
@@ -110,9 +111,10 @@ public class ModificacionUsuario extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
             out.println("<t1>" + "Hemos Actualizado el Usuario "+usuario.getNombre_usuario()+ "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"CerrarSesion?eleccion=regresar\"> REGRESAR</a>");
+            Conexion_Sql co= new Conexion_Sql(1);
+            out.println(" <a href=\"/Muebleria_Progra/Administracion/mod_usuario.jsp\"> REGRESAR</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");

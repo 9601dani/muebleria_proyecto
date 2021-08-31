@@ -74,9 +74,9 @@ public class VentaFinal extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
             out.println("<t1>" + "Hemos detectado campos vacios" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"InicioServlet?eleccion=rventa\"> Registrar Nuevamente</a>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/ventacliente.jsp\"> Registrar Nuevamente</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
@@ -93,11 +93,11 @@ public class VentaFinal extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "No hemos encontrado el cliente" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a class=\"btn btn-primary\"href=\"InicioServlet?eleccion=rventa\">Registrar Venta</a>");
+            out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventacliente.jsp\">Registrar Venta</a>");
             out.println("<br>");
-            out.println(" <a class=\"btn btn-primary\"href=\"InicioServlet?eleccion=ncliente\"> Registrar Cliente</a>");
+            out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventasincliente.jsp\"> Registrar Cliente</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
@@ -122,9 +122,9 @@ public class VentaFinal extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
             out.println("<t1>Hemos registrado la venta</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"CerrarSesion?eleccion=regresarV\"> REGRESAR</a>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/iventa.jsp\"> REGRESAR</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");

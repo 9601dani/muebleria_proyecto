@@ -25,7 +25,7 @@ public class Manejador_Mueble_Ensamblado {
     private final String AÑADIR_M_E="INSERT INTO mueble_ensamblado (id_mueble_ensamblado,fecha_ensamble,usuario_nombre,id_estado_mueble,nombre_mueble,costo_fabricacion) VALUES(?,?,?,?,?,?)";
     private final String SELECT="SELECT * FROM mueble_ensamblado WHERE id_mueble_ensamblado=?";
      private final String SELECT_ESTADO="SELECT * FROM estado_mueble_ensamblado WHERE id_estado_mueble_ensamblado=?";
-    private final String SELECT_SELECT="SELECT * FROM mueble_ensamblado WHERE nombre_mueble=?";
+    private final String SELECT_SELECT="SELECT id_mueble_ensamblado FROM mueble_ensamblado WHERE nombre_mueble=?";
     private final String SELECT_ALL="SELECT * FROM mueble_ensamblado";
     private final String DELETE="DELETE FROM mueble_ensamblado WHERE id_mueble_ensamblado=?";
     private final String UPDATE="UPDATE mueble_ensamblado SET id_estado_mueble=? WHERE id_mueble_ensamblado=?";

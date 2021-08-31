@@ -26,7 +26,7 @@
         <p>
         <p>
             <div>
-                <img class="mb-4" src="imagen/imagen.png" alt="" width="100" height="100">
+                <img class="mb-4" src="/Muebleria_Progra/imagen/imagen.png" alt="" width="100" height="100">
             </div>
             </section>
             <br>
@@ -59,7 +59,7 @@
                 </table>
             </form>
             <br>
-            <form style="background-color: lightsteelblue" action="ModificacionUsuario" method="post">
+            <form style="background-color: lightsteelblue" action="/Muebleria_Progra/ModificacionUsuario" method="post">
             <div class="form-row">
                 <div class="form-group required">
                     <div class="form-group col-md-6">
@@ -82,7 +82,7 @@
             <br>
         </form>
         <div class="text-center">
-            <a class="btn btn-primary btn-sm" href="CerrarSesion?eleccion=regresar">REGRESAR</a>
+            <a class="btn btn-primary btn-sm" href="/Muebleria_Progra/Administracion/iadministracion.jsp">REGRESAR</a>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>

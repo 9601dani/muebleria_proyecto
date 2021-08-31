@@ -28,9 +28,12 @@ public class InicioServlet extends HttpServlet {
             String nu="Administracion/creacion_usuario.jsp";
             String mu="Administracion/mod_usuario.jsp";
             //VENTAS
+            String regresoV="Venta/iventa.jsp";
             String nv="Venta/realizarventa.jsp";
             String nc="Venta/ventasincliente.jsp";
             String rv="Venta/ventacliente.jsp";
+            String prueba="Venta/pruebabuscador.jsp";
+            String pruebaF="Venta/buscadorfinal.jsp";
             //ELECCION
             String eleccion= request.getParameter("eleccion");
             String destino="";
@@ -48,6 +51,12 @@ public class InicioServlet extends HttpServlet {
                 destino+=rv;
             }else if(eleccion.equals("rcliente")){
                 
+            }else if(eleccion.equals("prueba")){
+                destino+=prueba;
+            }else if(eleccion.equals("regresoV")){
+                destino+=regresoV;
+            }else if(eleccion.equals("buscadorfinal")){
+                destino+=pruebaF;
             }
             
             RequestDispatcher salida= request.getRequestDispatcher(destino);

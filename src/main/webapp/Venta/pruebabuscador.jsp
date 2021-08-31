@@ -1,13 +1,14 @@
 <%-- 
-    Document   : realizarventa
-    Created on : 30/08/2021, 00:15:45
+    Document   : pruebabuscador
+    Created on : 30/08/2021, 10:49:52
     Author     : daniel
 --%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="com.mycompany.muebleria_progra.conexion.Conexion_Sql"%>
-<%@page import="com.mycompany.muebleria_progra.conexion.Conexion_Sql"%>
+<%@page import="sun.net.smtp.SmtpClient"%>
+<%@page import="com.mycompany.muebleria_progra.manejadoresclases.Manejador_Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,10 +19,6 @@
    
     </head>
     <body>
-        <div class="text-center">
-            <h1>Registro de Venta</h1>
-            <img class="mb-4" src="/Muebleria_Progra/imagen/ventas.jpg" alt="" width="250" height="150">
-        </div>
                 <%
                    Conexion_Sql co= new Conexion_Sql();
                    Statement smy;
@@ -34,20 +31,8 @@
             <br>
             <br>
             <form class="form" >
-                <input class="form-control" type="text" name="textbuscar" placeholder="nombre del cliente">
-            <div class="col-sm">
-                <div class="form-group col-md-12">
-                    <input class="btn btn-success" type="submit" value="BUSCAR">
-                </div>
-            </div>
-                <br>
-            <div class="col-sm">
-              <div class="form-group col-md-12">
-                   <a href="/Muebleria_Progra/Venta/ventasincliente.jsp" class="btn btn-primary"> Registrar Cliente</a>
-              </div>
-            </div>
-                <br>
-                <a> *** Si no encuentra el cliente presione "registrar" para registrar al cliente</a>
+                <input class="form-control" type="text" name="textbuscar">
+                <input class="btn btn-success" type="submit" value="BUSCAR">
             </form> 
             
              
@@ -85,31 +70,16 @@
                     <%}%>
                 </tbody>
             </table>
-                
-        </div>
-         <form method="post" action="/Muebleria_Progra/NuevaVenta">
-            <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                    <div class="form-group col-md-12">
-                        <label for="inputEmail4">Nit Cliente</label>
-                        <input name="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)">
-                    </div>
-                  </div>
-                </div>
-                
-            </div>
-            <br>      
-              <div class="text-center">
-                  <%
+                <%
                    Conexion_Sql con= new Conexion_Sql(1);
                 %>
-                  <button type="submit" class="btn btn-primary">Corroborar datos</button>
-              </div>
-          </form>
+        </div>
+        
+        
+        
+        
                 <script src="js/jquery.js" type="text/javascript"></script>
                 <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>
 </html>
-

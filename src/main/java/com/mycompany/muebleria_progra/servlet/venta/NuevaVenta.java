@@ -1,6 +1,7 @@
 package com.mycompany.muebleria_progra.servlet.venta;
 
 import com.mycompany.muebleria_progra.clases.Usuario;
+import com.mycompany.muebleria_progra.conexion.Conexion_Sql;
 import com.mycompany.muebleria_progra.manejadoresclases.Manejador_Cliente;
 import com.mycompany.muebleria_progra.manejadoresclases.Manejador_Usuario;
 import java.io.IOException;
@@ -58,13 +59,14 @@ public class NuevaVenta extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
             out.println("<t1>" + "Hemos detectado campos vacios" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a href=\"CerrarSesion?eleccion=regresarV\"> REGRESAR</a>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/iventa.jsp\"> REGRESAR</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
         } else if (msg.equals("cliente existente")) {
+            Conexion_Sql c= new Conexion_Sql(9);
             PrintWriter out = resp.getWriter();
             out.println("<html>");
             out.println("<head>");
@@ -77,9 +79,9 @@ public class NuevaVenta extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "Hemos encontrado el cliente" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a class=\"btn btn-primary\"href=\"InicioServlet?eleccion=rventa\"> Ir A Venta</a>");
+            out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventacliente.jsp\"> Ir A Venta</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");
@@ -96,9 +98,9 @@ public class NuevaVenta extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "No hemos encontrado el cliente" + "</t1>");
             out.println("<br>");
-            out.println("<img class=\"mb-4\" src=\"imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
-            out.println(" <a class=\"btn btn-primary\"href=\"InicioServlet?eleccion=ncliente\"> Registrar Cliente</a>");
+            out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventasincliente.jsp\"> Registrar Cliente</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");

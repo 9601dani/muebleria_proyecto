@@ -21,9 +21,9 @@
         <br>
         <div class="text-center">
             <h1>Registro de Cliente</h1>
-            <img class="mb-4" src="imagen/ventas.jpg" alt="" width="250" height="150">
+            <img class="mb-4" src="/Muebleria_Progra/imagen/ventas.jpg" alt="" width="250" height="150">
         </div>
-        <form method="post" action="NuevoCliente">
+        <form method="post" action="/Muebleria_Progra/NuevoCliente">
             <div class="container">
                 <div class="row">
                   <div class="col-sm">
@@ -70,6 +70,7 @@
                     <h6>(Recuerda que * significa que son campos obligatorios)</h6>
                 </div>
             <br>
+             <a class="btn btn-primary" href="/Muebleria_Progra/Venta/iventa.jsp"> Salir</a>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>
 </html>

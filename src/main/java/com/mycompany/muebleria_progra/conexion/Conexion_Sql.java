@@ -24,9 +24,13 @@ public class Conexion_Sql {
     }
     public int conectar() {
         try{
-
+            
+            if(conexion!=null){
+                desconectar();
+            }
             if (conexion != null) {
                 JOptionPane.showMessageDialog(null, "La conexión previa con la base de datos sigue vigente");
+                
             } 
                Class.forName("com.mysql.cj.jdbc.Driver");
                 String url = "jdbc:mysql://localhost:3306/muebleria_proyecto";// AL FINAL VA EL NOMBRE DE LA BASE DE DATOS

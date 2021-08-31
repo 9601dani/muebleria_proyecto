@@ -19,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.SendResult;
 
 /**
  *
@@ -42,7 +43,7 @@ public class Validacion extends HttpServlet {
             
             if(user=="" || pass==""){
                 System.out.println(user);
-                response(response, 6,request);
+                response(response, 6,request,user);
             } else{
                 Manejador_Usuario mu = new Manejador_Usuario();
                 ArrayList<Usuario> usuario= new ArrayList<>();
@@ -59,9 +60,9 @@ public class Validacion extends HttpServlet {
                     System.out.println("null");
 
                     if (user.equals(u) && pass.equals(c)) {
-                        response(response, tipo, request);
+                        response(response, tipo, request,u);
                     } else {
-                        response(response,5, request);
+                        response(response,5, request,user);
                     }
                 }else{
                     System.out.println("no hay ndada");
@@ -72,38 +73,22 @@ public class Validacion extends HttpServlet {
             e.printStackTrace();
         } 
         catch (SQLException ex) {
-            response(response, 5, request);
+            response(response, 5, request,user);
         } 
         
     }
-    private void response(HttpServletResponse resp, int tipo,HttpServletRequest request)
+    private void response(HttpServletResponse resp, int tipo,HttpServletRequest request,String u)
 			throws IOException {
         
         String destinoV="Venta/iventa.jsp";
         String destinoA="Administracion/iadministracion.jsp";
         String destinoF="Fabrica/ifabrica.jsp";
         if(tipo==1){
-            
-            RequestDispatcher salida= request.getRequestDispatcher(destinoA);
-            try {
-                salida.forward(request, resp);
-            } catch (ServletException ex) {
-                System.out.println("error");
-            }
+                resp.sendRedirect(destinoA);
         }else if(tipo==2){
-             RequestDispatcher salida= request.getRequestDispatcher(destinoV);
-             try {
-                salida.forward(request, resp);
-            } catch (ServletException ex) {
-                System.out.println("error");
-            }
+            resp.sendRedirect(destinoV);
         }else if(tipo==3){
-             RequestDispatcher salida= request.getRequestDispatcher(destinoF);
-             try {
-                salida.forward(request, resp);
-            } catch (ServletException ex) {
-                System.out.println("error");
-            }
+            resp.sendRedirect(destinoF);
         }else if(tipo==4){
              PrintWriter out = resp.getWriter();
 		out.println("<html>");

@@ -30,9 +30,6 @@ public class CerrarSesion extends HttpServlet {
             }else if(eleccion.equals("regresar")){
                 Conexion_Sql co= new Conexion_Sql(1);
                 destino+=regreso;
-            }else if(eleccion.equals("regresarV")){
-                Conexion_Sql co= new Conexion_Sql(1);
-                destino+=regresoV;
             }
             RequestDispatcher salida= request.getRequestDispatcher(destino);
             salida.forward(request, response);
