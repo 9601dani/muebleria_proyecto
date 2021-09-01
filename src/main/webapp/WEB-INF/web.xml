@@ -32,6 +32,14 @@
         <servlet-name>VentaFinal</servlet-name>
         <servlet-class>com.mycompany.muebleria_progra.servlet.venta.VentaFinal</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CargaDatos</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.CargaDatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReintegroVenta</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.venta.ReintegroVenta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InicioServlet</servlet-name>
         <url-pattern>/InicioServlet</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>VentaFinal</servlet-name>
         <url-pattern>/VentaFinal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CargaDatos</servlet-name>
+        <url-pattern>/CargaDatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReintegroVenta</servlet-name>
+        <url-pattern>/ReintegroVenta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

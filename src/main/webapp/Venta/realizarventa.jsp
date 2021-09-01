@@ -22,6 +22,7 @@
             <h1>Registro de Venta</h1>
             <img class="mb-4" src="/Muebleria_Progra/imagen/ventas.jpg" alt="" width="250" height="150">
         </div>
+
                 <%
                    Conexion_Sql co= new Conexion_Sql();
                    Statement smy;
@@ -71,6 +72,8 @@
                         <th class="text-center">Nit</th>
                         <th class="text-center">Nombre</th>
                         <th class="text-center">Direccion</th>
+                        <th class="text-center">Municipio</th>
+                        <th class="text-center">Departamento</th>
                     </tr>
                 </thead>
                 <tbody id="tbodys">
@@ -81,6 +84,8 @@
                         <td class="text-center"><%= rs.getString("nit")%></td>
                         <td><%= rs.getString("nombre")%></td>
                         <td><%= rs.getString("direccion")%></td>
+                        <td><%= rs.getString("municipio")%></td>
+                        <td><%= rs.getString("departamento")%></td>
                     </tr>
                     <%}%>
                 </tbody>

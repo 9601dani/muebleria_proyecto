@@ -36,6 +36,8 @@ public class NuevaVenta extends HttpServlet {
                     ResultSet datosObtenidos=nu.select(nit);
                     if (datosObtenidos.getString("nit").equals(nit) && datosObtenidos!=null) {
                          response(response, "cliente existente", request);
+                         request.getSession().setAttribute("nit", nit);
+                         
                     } else {
                         response(response,"cliente no existente", request);
                     }
@@ -79,6 +81,7 @@ public class NuevaVenta extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "Hemos encontrado el cliente" + "</t1>");
             out.println("<br>");
+            request.getRequestDispatcher("/realizarventa.jsp");
             out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
             out.println("<br>");
             out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventacliente.jsp\"> Ir A Venta</a>");

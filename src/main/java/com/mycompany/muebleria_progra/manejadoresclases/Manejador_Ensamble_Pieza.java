@@ -29,7 +29,7 @@ public class Manejador_Ensamble_Pieza {
         
     }
     
-    public int añadir(Ensamble_Pieza pieza){
+    public int añadir(Ensamble_Pieza pieza)throws SQLException{
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(INGRESO);
             query.setInt(1, pieza.getCantidad());

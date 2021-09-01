@@ -43,12 +43,12 @@
             <div class="form">
                 <div class="item"> <! - parte de nombre de usuario ->
                     <i></i> <! - Se utilizará para dibujar el icono delante del nombre de usuario ->
-                    <input type="text" placeholder="username" name="username"> <! - Entrada de nombre de usuario realizada por cuadro de texto ->
+                    <input type="text" placeholder="username" name="username" required> <! - Entrada de nombre de usuario realizada por cuadro de texto ->
                 </div>
                 <p>
                 <div class="item"> <! - parte de la contraseña ->
                     <i></i> <! - Se utilizará para dibujar el icono delante de la contraseña en el futuro ->
-                    <input type="password" placeholder="password" name="password"> <! - Entrada de contraseña usando el cuadro de texto de contraseña ->
+                    <input type="password" placeholder="password" name="password" required> <! - Entrada de contraseña usando el cuadro de texto de contraseña ->
                 </div>
 
             </div>
@@ -58,6 +58,10 @@
             
         </div>
     </form>
+        <br>
+        <br>
+        <a href="/Muebleria_Progra/Inicio/carga.jsp" class="btn btn-primary"> Subir Archivo De Datos</a>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   
     </body>

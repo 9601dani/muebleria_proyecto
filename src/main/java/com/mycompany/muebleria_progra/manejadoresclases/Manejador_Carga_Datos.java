@@ -14,6 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -21,6 +23,7 @@ import java.sql.SQLException;
  * @author daniel
  */
 public class Manejador_Carga_Datos extends Thread{
+    private List<String> errores= new ArrayList();
     private File archivo;
     private String nombreArchivo;
     private static final String USUARIO="USUARIO";
@@ -49,11 +52,15 @@ public class Manejador_Carga_Datos extends Thread{
         }
         
     }
-    public void leerNuevosArchivos()throws FileNotFoundException, IOException{
+    public List<String> leerNuevosArchivos()throws IOException{
         try{
-            FileReader archivo1 = new FileReader(archivo); // PIDE EL ARCHIVO A SUBIR       
+            System.out.println("probe");
+            FileReader archivo1 = new FileReader(archivo); // PIDE EL ARCHIVO A SUBIR 
+            System.out.println("lei");
             BufferedReader archivo= new BufferedReader(archivo1); // LE ENVIAMOS AL LECTOR EL ARCHIVO
+            System.out.println("aqui");
             String LArchivo = archivo.readLine(); // LEERA LINEA POR LINEA EL ARCHIVO
+            System.out.println("m");
             this.lineaPrincipal= LArchivo;
             int posicion;
             String Vauxiliar ;
@@ -79,16 +86,19 @@ public class Manejador_Carga_Datos extends Thread{
 
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("NO CUMPLE EL FORMATO, LA SIGUIENTE LINEA: " + lineaPrincipal);
+                    errores.add("NO CUMPLE EL FORMATO : "+lineaPrincipal);
                     e.printStackTrace();
                     LArchivo = archivo.readLine();
                 }
             }
              System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
-             System.out.println("**SE COMPLETO LA CARGA DE ARCHIVOS**".toUpperCase());
+             errores.add("**SE HAN MOSTRADO TODOS LOS ERRORES**".toUpperCase());
         }catch(Exception e){ 
              System.out.println("NO CUMPLE CON EL FORMATO VALIDO : "+lineaPrincipal);  
+             errores.add("NO CUMPLE CON EL FORMATO VALIDO : "+lineaPrincipal);
              System.out.println(e);
         }
+        return errores;
     }
     public static String[] quitarParentesis(String lineaTexto){
         int posicionPrincipal;
@@ -103,92 +113,133 @@ public class Manejador_Carga_Datos extends Thread{
         String arregloLinea = lineaTexto.substring(1,lineaTexto.length()-1);
         return arregloLinea;
     }
-    public void verificarMetodo(String nombreAVerificar, String[] datosObtenidos) throws IOException, SQLException{
+    public void verificarMetodo(String nombreAVerificar, String[] datosObtenidos){
         // SI ES USUARIO
-        if(nombreAVerificar.equals(NOMBRES[0])){
-            Usuario us;
-            String nomU = quitarComillas(datosObtenidos[0]);
-            String pass = quitarComillas(datosObtenidos[1]);
-            int tip= Integer.parseInt(datosObtenidos[2]);
-           
-                us = new  Usuario(nomU,pass,tip);
+       
+        try {
+            if (nombreAVerificar.equals(NOMBRES[0])) {
+                Usuario us;
+                String nomU = quitarComillas(datosObtenidos[0]);
+                String pass = quitarComillas(datosObtenidos[1]);
+                int tip = Integer.parseInt(datosObtenidos[2]);
+
+                us = new Usuario(nomU, pass, tip);
                 Manejador_Usuario mu = new Manejador_Usuario();
-                mu.añadir(us);
-               System.out.println(lineaPrincipal +" ***GUARDADA CON EXITO ***"); 
-        }
-        //SI ES PIEZA
-        if(nombreAVerificar.equals(NOMBRES[1])){
-            Pieza pieza;
-            String tipo= quitarComillas(datosObtenidos[0]);
-            BigDecimal costo= BigDecimal.valueOf(Double.parseDouble(datosObtenidos[1]));
-                pieza = new Pieza(tipo,costo);
-                Manejador_Pieza mp = new Manejador_Pieza();
-                mp.añadir(pieza);
-               System.out.println(lineaPrincipal +" ***GUARDADA CON EXITO ***");
+                    try{
+                        mu.añadir(us);
+                    } catch(SQLException e){
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    }
 
-        }
-        // SI ES MUEBLE
-        if (nombreAVerificar.equals(NOMBRES[2])) {
-            Mueble mueble;
-            String nom = quitarComillas(datosObtenidos[0]);
-            BigDecimal costo = BigDecimal.valueOf(Double.parseDouble(datosObtenidos[1]));
-            mueble = new Mueble(nom, costo);
-            Manejador_Mueble mm = new Manejador_Mueble();
-            mm.añadir(mueble);
-            System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
-        }
-        //SI ES ENSAMBLE DE PIEZAS
-        if (nombreAVerificar.equals(NOMBRES[3])) {
-            Ensamble_Pieza ep;
-            String nombre_mueble = quitarComillas(datosObtenidos[1]);
-            String ti_pieza = quitarComillas(datosObtenidos[0]);
-            int cant = Integer.parseInt(datosObtenidos[2]);
-
-            ep = new Ensamble_Pieza(cant, nombre_mueble, ti_pieza);
-            Manejador_Ensamble_Pieza mep= new Manejador_Ensamble_Pieza();
-            mep.añadir(ep);
-            System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
-
-        }
-        //SI ES ENSAMBLAR MUEBLE
-        if(nombreAVerificar.equals(NOMBRES[4])){
-            Mueble_Ensamblado me;
-            Manejador_Mueble_Ensamblado mme = new Manejador_Mueble_Ensamblado();
-            java.util.Date fecha = mme.formatoFecha(quitarComillas(datosObtenidos[2]),FORMATO_CARGA);
-            System.out.println("-------");
-            String usuario= datosObtenidos[1];
-            String mueble= quitarComillas(datosObtenidos[0]);
-            me= new Mueble_Ensamblado(fecha,usuario,mueble);
-            mme.verificacion(me);
-            
-            System.out.println(lineaPrincipal + mme.verificacion(me));
-        }
-        // SI ES CLIENTE
-         if (nombreAVerificar.equals(NOMBRES[5])) {
-            Cliente cliente;
-            
-            if(datosObtenidos.length==3){
-                String nom= quitarComillas(datosObtenidos[0]);
-                String nit= quitarComillas(datosObtenidos[1]);
-                String direc= quitarComillas(datosObtenidos[2]);
-                cliente= new Cliente(nit,nom,direc);
-                
-                Manejador_Cliente mc= new Manejador_Cliente();
-                mc.añadir(cliente);
-                System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
-            }else{
-                String nom= quitarComillas(datosObtenidos[0]);
-                String nit= quitarComillas(datosObtenidos[1]);
-                String direc= quitarComillas(datosObtenidos[2]);
-                String mun= quitarComillas(datosObtenidos[3]);
-                String dep= quitarComillas(datosObtenidos[4]);
-                
-                cliente = new Cliente(nit,nom,direc,mun,dep);
-                Manejador_Cliente mc= new Manejador_Cliente();
-                mc.añadir_extenso(cliente);
                 System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
             }
-         }
+            //SI ES PIEZA
+            if (nombreAVerificar.equals(NOMBRES[1])) {
+                Pieza pieza;
+                String tipo = quitarComillas(datosObtenidos[0]);
+                BigDecimal costo = BigDecimal.valueOf(Double.parseDouble(datosObtenidos[1]));
+                pieza = new Pieza(tipo, costo);
+                Manejador_Pieza mp = new Manejador_Pieza();
+                try{
+                    mp.añadir(pieza);
+                    System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
+                }catch(SQLException e){
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                }
+            }
+            // SI ES MUEBLE
+            if (nombreAVerificar.equals(NOMBRES[2])) {
+                Mueble mueble;
+                String nom = quitarComillas(datosObtenidos[0]);
+                BigDecimal costo = BigDecimal.valueOf(Double.parseDouble(datosObtenidos[1]));
+                mueble = new Mueble(nom, costo);
+                Manejador_Mueble mm = new Manejador_Mueble();
+                try{
+                    mm.añadir(mueble);
+                }catch(SQLException e){
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                }
+                
+                System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
+            }
+            //SI ES ENSAMBLE DE PIEZAS
+            if (nombreAVerificar.equals(NOMBRES[3])) {
+                Ensamble_Pieza ep;
+                String nombre_mueble = quitarComillas(datosObtenidos[1]);
+                String ti_pieza = quitarComillas(datosObtenidos[0]);
+                int cant = Integer.parseInt(datosObtenidos[2]);
+
+                ep = new Ensamble_Pieza(cant, nombre_mueble, ti_pieza);
+                Manejador_Ensamble_Pieza mep = new Manejador_Ensamble_Pieza();
+                try{
+                    mep.añadir(ep);
+                }catch(SQLException e){
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                }
+                
+                System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
+
+            }
+            //SI ES ENSAMBLAR MUEBLE
+            if (nombreAVerificar.equals(NOMBRES[4])) {
+                Mueble_Ensamblado me;
+                Manejador_Mueble_Ensamblado mme = new Manejador_Mueble_Ensamblado();
+                java.util.Date fecha = mme.formatoFecha(quitarComillas(datosObtenidos[2]), FORMATO_CARGA);
+                System.out.println("-------");
+                String usuario = datosObtenidos[1];
+                String mueble = quitarComillas(datosObtenidos[0]);
+                me = new Mueble_Ensamblado(fecha, usuario, mueble);
+                try{
+                     mme.verificacion(me);
+                }catch(SQLException e){
+                   errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                }
+               
+
+                System.out.println(lineaPrincipal + mme.verificacion(me));
+            }
+            // SI ES CLIENTE
+            if (nombreAVerificar.equals(NOMBRES[5])) {
+                Cliente cliente;
+
+                if (datosObtenidos.length == 3) {
+                    String nom = quitarComillas(datosObtenidos[0]);
+                    String nit = quitarComillas(datosObtenidos[1]);
+                    String direc = quitarComillas(datosObtenidos[2]);
+                    cliente = new Cliente(nit, nom, direc);
+
+                    Manejador_Cliente mc = new Manejador_Cliente();
+                    try{
+                         mc.añadir(cliente);
+                    }catch(SQLException e){
+                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    }
+                   
+                    System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
+                } else {
+                    String nom = quitarComillas(datosObtenidos[0]);
+                    String nit = quitarComillas(datosObtenidos[1]);
+                    String direc = quitarComillas(datosObtenidos[2]);
+                    String mun = quitarComillas(datosObtenidos[3]);
+                    String dep = quitarComillas(datosObtenidos[4]);
+
+                    cliente = new Cliente(nit, nom, direc, mun, dep);
+                    Manejador_Cliente mc = new Manejador_Cliente();
+                    try{
+                        mc.añadir_extenso(cliente);
+                    }catch(SQLException e){
+                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    }catch(ArrayIndexOutOfBoundsException p){
+                        errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    }
+                    
+                    System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("carga error "+ e);
+        }
+
      }
 
     

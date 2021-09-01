@@ -26,7 +26,7 @@ public class Manejador_Mueble {
       Conexion_Sql co= new Conexion_Sql();
     }
     
-    public int añadir(Mueble mueble){
+    public int añadir(Mueble mueble)throws SQLException{
          try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_MUEBLE);
             query.setString(1, mueble.getNombre_mueble());

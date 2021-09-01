@@ -28,7 +28,7 @@ public class Manejador_Pieza {
        Conexion_Sql co = new Conexion_Sql();
     }
     
-    public int añadir(Pieza pieza){
+    public int añadir(Pieza pieza)throws SQLException{
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_PIEZA);
             query.setString(1, pieza.getTipo_pieza());

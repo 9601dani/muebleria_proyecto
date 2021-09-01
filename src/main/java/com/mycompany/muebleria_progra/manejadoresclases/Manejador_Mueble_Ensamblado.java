@@ -35,7 +35,7 @@ public class Manejador_Mueble_Ensamblado {
         Conexion_Sql co= new Conexion_Sql();
     }
     
-    public String verificacion(Mueble_Ensamblado mueble) {
+    public String verificacion(Mueble_Ensamblado mueble)throws SQLException {
         String retorno="";
         System.out.println(mueble.getNombre_mueble());
         Manejador_Ensamble_Pieza mep = new Manejador_Ensamble_Pieza();
@@ -128,7 +128,7 @@ public class Manejador_Mueble_Ensamblado {
         
     }
     
-    public int añadir(Mueble_Ensamblado mueble, BigDecimal costo){
+    public int añadir(Mueble_Ensamblado mueble, BigDecimal costo)throws SQLException{
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_M_E);
             query.setString(1, mueble.getId_mueble_ensamblado());
@@ -182,6 +182,11 @@ public class Manejador_Mueble_Ensamblado {
             query = Conexion_Sql.conexion.prepareStatement(SELECT_ESTADO);
             query.setInt(1, id_estado_mueble);
             datosObtenidos=query.executeQuery();
+            if(datosObtenidos.next() && datosObtenidos!=null){
+                datosObtenidos.getString("nombre_estado");
+            }else{
+                System.out.println("vacio jeje");
+            }
             
         } catch (SQLException ex) {
             System.out.println(ex);

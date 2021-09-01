@@ -29,7 +29,7 @@
                   <div class="col-sm">
                     <div class="form-group col-md-12">
                         <label for="inputText">Nit Cliente</label>
-                        <input name="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)">
+                        <input name="textnit" type="text" class="form-control" id="in" value="<%= request.getSession().getAttribute("nit") %>" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="inputText">Id del Mueble</label>

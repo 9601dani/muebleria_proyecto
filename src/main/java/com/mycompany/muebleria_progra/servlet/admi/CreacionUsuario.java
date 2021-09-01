@@ -126,6 +126,8 @@ public class CreacionUsuario extends HttpServlet {
             out.println("</html>");
         } catch (IOException ex) {
             System.out.println("error escritura");
+        }catch(SQLException e){
+            System.out.println("error al registrar usuario");
         }
     }
     @Override

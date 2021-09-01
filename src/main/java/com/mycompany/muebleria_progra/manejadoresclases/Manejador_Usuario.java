@@ -30,17 +30,13 @@ public class Manejador_Usuario {
        // conexion= Conexion_Sql.getConnection();
         
     }
-    public int añadir(Usuario usuario){
-       try {
+    public int añadir(Usuario usuario) throws SQLException{
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR);
             query.setString(1, usuario.getNombre_usuario());
             query.setString(2, usuario.getPasssword());
             query.setInt(3, usuario.getTipo_usuario());
             query.executeUpdate();
-        } 
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
+
        Conexion_Sql con = new Conexion_Sql(1);
         return 0;
         

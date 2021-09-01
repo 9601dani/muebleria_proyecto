@@ -143,6 +143,8 @@ public class NuevoCliente extends HttpServlet {
             out.println("</html>");
         } catch (IOException ex) {
             System.out.println("error escritura");
+        } catch(SQLException e){
+            System.out.println("error al registrar cliente");
         }
       }
       
@@ -171,6 +173,8 @@ public class NuevoCliente extends HttpServlet {
             out.println("</html>");
         } catch (IOException ex) {
             System.out.println("error escritura");
+        }catch(SQLException e){
+            System.out.println("error al registrar cliente");
         }
     }
       

@@ -28,7 +28,7 @@ public class Manejador_Cliente {
     }
     
     
-    public int añadir(Cliente cliente){
+    public int añadir(Cliente cliente)throws SQLException{
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_CLIENTE);
             query.setString(1, cliente.getNit());
@@ -42,7 +42,7 @@ public class Manejador_Cliente {
         Conexion_Sql con = new Conexion_Sql(1);
         return 0;
     }
-    public int añadir_extenso(Cliente cliente){
+    public int añadir_extenso(Cliente cliente) throws SQLException{
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_CLIENTE_EXTENSO);
             query.setString(1, cliente.getNit());

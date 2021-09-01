@@ -22,6 +22,7 @@ com/mycompany/muebleria_progra/servlet/venta/NuevaVenta.class
 com/mycompany/muebleria_progra/servlet/InicioServlet.class
 com/mycompany/muebleria_progra/servlet/venta/NuevoCliente.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Carga_Datos.class
+com/mycompany/muebleria_progra/servlet/admi/CargaDatos.class
 com/mycompany/muebleria_progra/servlet/CerrarSesion.class
 com/mycompany/muebleria_progra/clases/Pieza.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Factura.class

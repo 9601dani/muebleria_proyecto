@@ -52,7 +52,7 @@
             <div class="mb-3">
                 <div style="font-size: 15px;">
                     <h3>
-                        <a href="/Muebleria_Progra/Venta/pruebabuscador.jsp" class="btn"> Ver Cliente</a>
+                        <a href="/Muebleria_Progra/Venta/buscadorfinal.jsp" class="btn"> Consulta Muebles Disponibles</a>
                     </h3>
                     
                 </div>
@@ -61,7 +61,7 @@
           <div class="col">
             <div class="mb-3">
                 <div style="font-size: 15px;">
-                    <a href="*" class="btn"> Realizar Devolucion</a>
+                    <a href="/Muebleria_Progra/Venta/consultafactura.jsp" class="btn"> Consultar Factura</a>
                 </div>
                 
             </div> 
@@ -70,14 +70,36 @@
             <div class="mb-3">
                 <div style="font-size: 15px;">
                     <h3>
-                        <a href="*" class="btn"> Consultas</a>
+                        <a href="/Muebleria_Progra/Venta/consultadia.jsp" class="btn"> Ventas Del Dia</a>
                     </h3>
                     
                 </div>
                 
             </div> 
-          </div>
         </div>
+        <div class="col">
+            <div class="mb-3">
+                <div style="font-size: 15px;">
+                    <h3>
+                        <a href="/Muebleria_Progra/Venta/consultacompraintervalo.jsp" class="btn"> Consulta Compras Cliente</a>
+                    </h3>
+                    
+                </div>
+                
+            </div>    
+        </div>
+                <div class="col">
+            <div class="mb-3">
+                <div style="font-size: 15px;">
+                    <h3>
+                        <a href="/Muebleria_Progra/Venta/reintregreacionmueble.jsp" class="btn"> Reintegrar Mueble</a>
+                    </h3>
+                    
+                </div>
+                
+            </div>    
+        </div>    
+           
       </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
