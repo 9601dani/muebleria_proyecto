@@ -33,8 +33,9 @@
     <div style="background-color: lightblue;">
         <h1> Bienvenido a Ventas</h1>
         <div class="text-align" style="font-size: large">
-            <a href="/Muebleria_Progra/">Cerrar Sesion</a>
+            <a class="btn btn-primary" href="/Muebleria_Progra/">Cerrar Sesion</a>
         </div>
+        <br>
     </div>
     <body class="text-center" style="background-color:beige">
         <img class="mb-4" src="/Muebleria_Progra/imagen/venta.jpg" alt="" width="700" height="250">

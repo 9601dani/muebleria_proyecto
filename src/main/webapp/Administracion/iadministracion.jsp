@@ -37,8 +37,9 @@
             </div>
     <img class="mb-4" src="/Muebleria_Progra/imagen/imagen.png" alt="" width="100" height="100">
             <div class="text-align" style="font-size: large">
-                <a href="/Muebleria_Progra/">Cerrar Sesion</a>
+                <a class="btn btn-primary" href="/Muebleria_Progra/">Cerrar Sesion</a>
             </div>
+    <br>
     <div class="container col-lg-4" style="background-color: aquamarine">
         <div class="row gx-4">
           <div class="col">

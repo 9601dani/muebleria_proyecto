@@ -30,7 +30,7 @@
                    rs=smy.executeQuery("select * from pieza");
                 %>
         <div class="container buscar">
-            <a href="/Muebleria_Progra/Fabrica/modpiezas.jsp" class="btn btn-success">Regresar</a>
+            <a href="/Muebleria_Progra/Fabrica/ifabrica.jsp" class="btn btn-success">Regresar</a>
             <br>
             <br>
             <form class="form">
@@ -83,7 +83,43 @@
             <a class="btn btn-primary" href="/Muebleria_Progra/Fabrica/editarp.jsp" >EDITAR ALGUNA PIEZA</a>
             <a class="btn btn-primary" href="/Muebleria_Progra/Fabrica/npieza.jsp" > INGRESAR NUEVA PIEZA</a>
             <a class="btn btn-primary" href="/Muebleria_Progra/Fabrica/eliminarp.jsp" >ELIMINAR ALGUNA PIEZA</a>
-
+        <br>
+        <br>
+        <h3>A continuacion te presentamos las piezas que estan apunto de agotarse:</h3>
+             <%
+                   Conexion_Sql cok= new Conexion_Sql();
+                   Statement dmy;
+                   ResultSet rd;
+                   dmy=Conexion_Sql.getConnection().createStatement();
+                   rd=smy.executeQuery("SELECT tipo_pieza, cantidad,costo FROM pieza WHERE cantidad<10"); 
+                %>
+        <div class="container buscar">
+        </div>
+        <br>
+        <div class="container">
+            <table class="table table-bordered" id="tablaDatos">
+                <thead>
+                    <tr>
+                        <th class="text-center">Tipo Pieza</th>
+                        <th class="text-center">Cantidad</th>
+                        <th class="text-center">Costo</th>
+                </thead>
+                <tbody id="tbodys">
+                    <%
+                    while(rd.next()){
+                    %>
+                    <tr>
+                        <td class="text-center"><%= rd.getString("tipo_pieza")%></td>
+                        <td><%= rd.getInt("cantidad")%></td>
+                        <td><%= rd.getBigDecimal("costo")%></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+                <%
+                   Conexion_Sql cop= new Conexion_Sql(1);
+                %>
+        </div>
         
         
                 <script src="js/jquery.js" type="text/javascript"></script>
