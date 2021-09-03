@@ -234,11 +234,11 @@ public class Manejador_Mueble_Ensamblado {
         }
         Conexion_Sql co= new Conexion_Sql(1);
     }
-     public int update(String id){
+     public int update(String id,int estado){
         PreparedStatement query=null;
        try {
             query= Conexion_Sql.conexion.prepareStatement(UPDATE);
-            query.setInt(1, 2);
+            query.setInt(1, estado);
             query.setString(2, id);
             query.executeUpdate();
         } 

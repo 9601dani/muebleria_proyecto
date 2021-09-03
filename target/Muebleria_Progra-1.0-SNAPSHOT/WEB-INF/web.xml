@@ -40,6 +40,18 @@
         <servlet-name>ReintegroVenta</servlet-name>
         <servlet-class>com.mycompany.muebleria_progra.servlet.venta.ReintegroVenta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MPieza</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.MPieza</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DPieza</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.DPieza</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CPieza</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.CPieza</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InicioServlet</servlet-name>
         <url-pattern>/InicioServlet</url-pattern>
@@ -79,6 +91,18 @@
     <servlet-mapping>
         <servlet-name>ReintegroVenta</servlet-name>
         <url-pattern>/ReintegroVenta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MPieza</servlet-name>
+        <url-pattern>/MPieza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DPieza</servlet-name>
+        <url-pattern>/DPieza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CPieza</servlet-name>
+        <url-pattern>/CPieza</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

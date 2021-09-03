@@ -29,19 +29,19 @@
                   <div class="col-sm">
                     <div class="form-group col-md-12">
                         <label for="inputText">Nit Cliente*</label>
-                        <input name ="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)">
+                        <input name ="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)"  required>
                     </div>
                   </div>
                         <div class="col-sm">
                             <div class="form-group col-md-12">
                                 <label for="inputText">Nombre*</label>
-                                <input name="textnombre" type="text" class="form-control" id="inputPassword4" placeholder="Nombre">
+                                <input name="textnombre" type="text" class="form-control" id="inputPassword4" placeholder="Nombre"  required>
                             </div>
                         </div>
                         <div class="col-sm">
                           <div class="form-group col-md-12">
                               <label for="inputText">Direccion*</label>
-                              <input name="textdireccion" type="text" class="form-control" id="inputPassword4" placeholder="Direccion">
+                              <input name="textdireccion" type="text" class="form-control" id="inputPassword4" placeholder="Direccion"  required>
                           </div>
                         </div>
                         <div class="col-sm">

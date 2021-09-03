@@ -18,13 +18,13 @@
             <img class="mb-4" src="/Muebleria_Progra/imagen/ventas.jpg" alt="" width="250" height="150">
         </div>
         <h6 class="text-center"> REGISTRO DE FACTURA</h6>
-        <form method="post" action="/Muebleria_Progra/VentaFinal">
+        <form method="post" action="/Muebleria_Progra/ReintegroVenta">
             <div class="container">
                 <div class="row">
                   <div class="col-sm">
                     <div class="form-group col-md-12">
                         <label for="inputText">Codigo de Factura</label>
-                        <input name="textnit" type="text" class="form-control" id="in" required>
+                        <input name="textcodfactura" type="text" class="form-control" id="in" required>
                     </div>
                   </div>
                 </div>

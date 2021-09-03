@@ -20,7 +20,7 @@
         </div>
         <br>
         <br>
-        <form action="/Muebleria_Progra/CargaDatos" method="post">
+        <form action="/Muebleria_Progra/CargaDatos" method="post" enctype="multipart/form-data">
             <div class="container" style="background-color: honeydew">
                 <div class="row">
                   <div class="col-sm">
@@ -31,7 +31,7 @@
                         <br>
                         <br>
                         <div class="text-center">
-                            <a href="/Muebleria_Progra/" class="btn btn-primary"> Regresar</a>
+                            <a href="/Muebleria_Progra/Administracion/iadministracion.jsp" class="btn btn-primary"> Regresar</a>
                         </div>
                     </div>
                   </div>

@@ -20,6 +20,7 @@ public class Manejador_Pieza {
     private final String SELECT="SELECT * FROM pieza WHERE tipo_pieza=? AND costo=?";
     private final String SELECT_ALL="SELECT * FROM pieza";
     private final String DELETE="DELETE FROM pieza WHERE tipo_pieza=? AND costo=?";
+    private final String UPDATEE="UPDATE pieza SET cantidad=?, costo=? WHERE tipo_pieza=? AND costo=?";
     private final String UPDATE="UPDATE pieza SET cantidad=? WHERE tipo_pieza=? AND costo=?";
     private final String SELECT_ESPECIAL="SELECT * FROM pieza WHERE tipo_pieza=?";
     private Connection conexion;
@@ -88,24 +89,37 @@ public class Manejador_Pieza {
        return datosObtenidos;
     }
     
-     public void delete(String tipo_pieza,BigDecimal num){
-        try {
+     public void delete(String tipo_pieza,BigDecimal num) throws SQLException{
+
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(DELETE);
             query.setString(1, tipo_pieza);
             query.setBigDecimal(2, num);
             query.executeUpdate();
-        } catch (SQLException ex) {
-             System.out.println(ex);
-        }
+
         Conexion_Sql co = new Conexion_Sql(1);
     }
      
-      public int update(Pieza pieza){
+    public int update(String tipo,BigDecimal coston, BigDecimal costoa,int cantidad){
+        try {
+            PreparedStatement query= Conexion_Sql.conexion.prepareStatement(UPDATEE);
+            query.setBigDecimal(2, coston);
+            query.setString(3, tipo);
+            query.setBigDecimal(4, costoa);
+            query.setInt(1,cantidad);
+            query.executeUpdate();
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        Conexion_Sql co = new Conexion_Sql(1);
+        return 0;
+    }
+        public int update(Pieza pieza){
         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(UPDATE);
             query.setString(2, pieza.getTipo_pieza());
             query.setBigDecimal(3, pieza.getCosto());
-            query.setInt(1, pieza.getCantidad());
+            query.setInt(1,pieza.getCantidad());
             query.executeUpdate();
         } 
         catch (SQLException ex) {

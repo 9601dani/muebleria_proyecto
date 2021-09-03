@@ -13,15 +13,19 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author daniel
  */
+ @MultipartConfig(location="/tmp")
 public class CargaDatos extends HttpServlet {
 
 
@@ -34,6 +38,7 @@ public class CargaDatos extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,10 +47,24 @@ public class CargaDatos extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.crearArch(request, response);
+        
+            Part filePart= request.getPart("myfile");// OBTENEMOS OBJETO
+            String filename=filePart.getName();
+            System.out.println(filename);
+            
+            InputStream fileSteam = filePart.getInputStream();
+            
+            Manejador_Carga_Datos mc= new Manejador_Carga_Datos(fileSteam, "Archivo");
+            List<String> errores= mc.leerNuevosArchivos();
+            request.setAttribute("errores", errores);
+            request.getRequestDispatcher("/Inicio/errorescarga.jsp").forward(request, response);
+
     }
     public void crearArch(HttpServletRequest request, HttpServletResponse response){
-        String path = request.getParameter("myfile");
+        
+        
+        
+        /*String path = request.getParameter("myfile");
         System.out.println(path);
         File nfile= new File(path);
         System.out.println(nfile.getPath()+"---------");
@@ -60,7 +79,7 @@ public class CargaDatos extends HttpServlet {
             
         } catch (ServletException ex) {
             System.out.println(ex);
-        }
+        }*/
     }
 
     @Override

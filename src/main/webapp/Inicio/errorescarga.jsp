@@ -16,7 +16,9 @@
    
     </head>
     <body class="text-center">
-        <h1>Aqui Mostraremos los errores al subir el archivo</h1>
+        <h1>** ARCHIVO CARGADOS EXITOSAMENTE **</h1>
+        <br>   
+        <h1>A continuacion una tabla que muestra errores si hubieron</h1>
         <br>
         <br>
         <img src="/Muebleria_Progra/imagen/error.jpg" alt="" width="300" height="150"/>
@@ -48,7 +50,7 @@
         </div>
        <br> 
        <br>
-       <a href="/Muebleria_Progra/" class="btn btn-primary"> Regresar</a>
+       <a href="/Muebleria_Progra/Administracion/iadministracion.jsp" class="btn btn-primary"> Regresar</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
    
     </body>

@@ -105,7 +105,7 @@ public class VentaFinal extends HttpServlet {
     }
     public void realizarVenta(Factura factura,HttpServletResponse resp){
             Manejador_Mueble_Ensamblado nu = new Manejador_Mueble_Ensamblado();
-            nu.update(factura.getId_mueble());
+            nu.update(factura.getId_mueble(),2);
             PrintWriter out;
         try {
             Manejador_Factura nf = new Manejador_Factura();

@@ -31,15 +31,15 @@
             <form class="form" >
                 <label> Nit Cliente</label>
                 <br>
-                <input class="form-control" type="text" name="textname" placeholder="ingresa nit a buscar">
+                <input class="form-control" type="text" name="textname" placeholder="ingresa nit a buscar"  required>
                 <br>
-                <label> Fecha Inicial   **(yyyy-MM-dd)**</label>
+                <label> Fecha Inicial</label>
                 <br>
-                <input class="form-control" type="text" name="textfi" placeholder="fecha inicial formato yyyy/MM/dd">
+                <input class="form-control" type="date" name="textfi" placeholder="fecha inicial"  required>
                 <br>
-                <label> Fecha Final   **(yyyy-MM-dd)**</label>
+                <label> Fecha Final</label>
                 <br>
-                <input class="form-control" type="text" name="textff" placeholder="ingresa fecha final formato yyyy/MM/dd">
+                <input class="form-control" type="date" name="textff" placeholder="ingresa fecha final" required>
                 <br>
                 <input class="btn btn-success" type="submit" value="BUSCAR">
             </form> 

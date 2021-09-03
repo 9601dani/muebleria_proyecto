@@ -90,33 +90,62 @@ public class Validacion extends HttpServlet {
         }else if(tipo==3){
             resp.sendRedirect(destinoF);
         }else if(tipo==4){
-             PrintWriter out = resp.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-		out.println("<t1>" + "Actualmente tu usuario esta suspendido comunicate con un administrador" + "</t1>");
-                out.println("<p>");
-                out.println(" <a href=\"CerrarSesion?eleccion=inicio\"> REGRESAR</a>");
-                out.println("</body>");
-		out.println("</html>");
-        }else if(tipo==6){
-            
             PrintWriter out = resp.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-		out.println("<t1>" + "Datos Vacios" + "</t1>");
-                out.println("<p>");
-                out.println(" <a href=\"CerrarSesion?eleccion=inicio\"> REGRESAR</a>");
-		out.println("</body>");
-		out.println("</html>");
+             out.println("<html>");
+            out.println("<head>");
+            out.println(" <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We\" crossorigin=\"anonymous\">");
+            out.println("</head>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
+            out.println("<t1>" + "ACTUALMENTE TU USUARIO ESTA SUSPENDIDO INTENTA COMUNICARTE CON UN ADMINISTRADOR" + "</t1>");
+            out.println("<br>");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<br>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/iventa.jsp\"> REGRESAR</a>");
+            out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
+            out.println("</body>");
+            out.println("</html>");
+        }else if(tipo==6){
+            PrintWriter out = resp.getWriter();
+             out.println("<html>");
+            out.println("<head>");
+            out.println(" <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We\" crossorigin=\"anonymous\">");
+            out.println("</head>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
+            out.println("<t1>" + "HAY CAMPOS VACIOS" + "</t1>");
+            out.println("<br>");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<br>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/iventa.jsp\"> REGRESAR</a>");
+            out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
+            out.println("</body>");
+            out.println("</html>");
         }else{
-             PrintWriter out = resp.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-		out.println("<t1>" + "Login Incorrecto VERIFICA LOS DATOS INGRESADOS" + "</t1>");
-                out.println("<p>");
-                out.println(" <a href=\"CerrarSesion?eleccion=inicio\"> REGRESAR</a>");
-		out.println("</body>");
-		out.println("</html>");
+            PrintWriter out = resp.getWriter();
+             out.println("<html>");
+            out.println("<head>");
+            out.println(" <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We\" crossorigin=\"anonymous\">");
+            out.println("</head>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<body class=\"text-center\"  style=\"background-color: beige\">");
+            out.println("<t1>" + "ERROR AL INICIO DE SESION VERIFICA EL USUARIO Y CONTRASEÑA" + "</t1>");
+            out.println("<br>");
+            out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/error.jpg\" alt=\"\" width=\"250\" height=\"150\">");
+            out.println("<br>");
+            out.println(" <a href=\"/Muebleria_Progra/Venta/iventa.jsp\"> REGRESAR</a>");
+            out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
+            out.println("</body>");
+            out.println("</html>");
         }
 		
 	}

@@ -47,7 +47,7 @@
                 </div>
                 <p>
                 <div class="item"> <! - parte de la contraseña ->
-                    <i></i> <! - Se utilizará para dibujar el icono delante de la contraseña en el futuro ->
+                    <i></i>
                     <input type="password" placeholder="password" name="password" required> <! - Entrada de contraseña usando el cuadro de texto de contraseña ->
                 </div>
 
@@ -60,7 +60,6 @@
     </form>
         <br>
         <br>
-        <a href="/Muebleria_Progra/Inicio/carga.jsp" class="btn btn-primary"> Subir Archivo De Datos</a>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   

@@ -45,15 +45,21 @@ public class Manejador_Factura {
     
     public ResultSet select(int id_factura){
         ResultSet datosObtenidos=null;
-        
-        PreparedStatement query;
+        PreparedStatement query=null;
         try {
             query = Conexion_Sql.conexion.prepareStatement(SELECT);
             query.setInt(1, id_factura);
             datosObtenidos=query.executeQuery();
+            
+            if(datosObtenidos.next() && datosObtenidos!=null){
+                datosObtenidos.getInt("id_factura");
+            }else{
+                System.out.println("vacio jeje");
+            }
         } catch (SQLException ex) {
              System.out.println(ex);
         }
+        
          Conexion_Sql con = new Conexion_Sql(1);
        return datosObtenidos;
     }
@@ -65,6 +71,11 @@ public class Manejador_Factura {
         try {
             query = Conexion_Sql.conexion.prepareStatement(SELECT_ALL);
             datosObtenidos=query.executeQuery();
+            if(datosObtenidos.next() && datosObtenidos!=null){
+                datosObtenidos.getString("nombre_estado");
+            }else{
+                System.out.println("vacio jeje");
+            }
         } catch (SQLException ex) {
              System.out.println(ex);
         }

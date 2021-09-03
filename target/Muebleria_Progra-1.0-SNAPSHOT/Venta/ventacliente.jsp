@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label for="inputText">Id del Mueble</label>
-                        <input name="textmueble" type="text" class="form-control" id="in" placeholder="(Ingresa el id del mueble)">
+                        <input name="textmueble" type="text" class="form-control" id="in" placeholder="(Ingresa el id del mueble)"  required>
                     </div>
                   </div>
                 </div>

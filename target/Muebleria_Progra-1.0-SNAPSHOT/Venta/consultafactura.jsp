@@ -39,7 +39,7 @@
             <form class="form" >
                 <label> Codigo de Factura</label>
                 <br>
-                <input class="form-control" type="text" name="textbuscar" placeholder="ingrese codigo de factura">
+                <input class="form-control" type="text" name="textbuscar" placeholder="ingrese codigo de factura"  required>
                 <br>
                 <input class="btn btn-success" type="submit" value="BUSCAR">
             </form> 

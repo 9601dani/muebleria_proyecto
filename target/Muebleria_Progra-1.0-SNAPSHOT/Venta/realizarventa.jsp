@@ -79,13 +79,29 @@
                 <tbody id="tbodys">
                     <%
                     while(rs.next()){
+                    String muni="";
+                    if(rs.getString("municipio")==null){
+                        muni+="--------------------------";
+                    }
+                    else{
+                    muni+=rs.getString("municipio");
+                    }
+                    
+                    String dep="";
+                    if(rs.getString("departamento")==null){
+                        dep+="--------------------------";
+                    }
+                    else{
+                    dep+=rs.getString("departamento");
+                    }
+                    
                     %>
                     <tr>
                         <td class="text-center"><%= rs.getString("nit")%></td>
                         <td><%= rs.getString("nombre")%></td>
                         <td><%= rs.getString("direccion")%></td>
-                        <td><%= rs.getString("municipio")%></td>
-                        <td><%= rs.getString("departamento")%></td>
+                        <td><%= muni%></td>
+                        <td><%= dep%></td>
                     </tr>
                     <%}%>
                 </tbody>
@@ -98,7 +114,7 @@
                   <div class="col-sm">
                     <div class="form-group col-md-12">
                         <label for="inputEmail4">Nit Cliente</label>
-                        <input name="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)">
+                        <input name="textnit" type="text" class="form-control" id="in" placeholder="(no uses guiones)"  required>
                     </div>
                   </div>
                 </div>

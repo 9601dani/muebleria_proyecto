@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import java.util.List;
  */
 public class Manejador_Carga_Datos extends Thread{
     private List<String> errores= new ArrayList();
-    private File archivo;
+    private InputStream archivoN;
     private String nombreArchivo;
     private static final String USUARIO="USUARIO";
     private static final String PIEZA="PIEZA";
@@ -35,8 +37,8 @@ public class Manejador_Carga_Datos extends Thread{
     private static final String[] NOMBRES ={USUARIO, PIEZA, MUEBLE, ENSAMBLE_PIEZAS, ENSAMBLAR_MUEBLE, CLIENTE};
     private static String lineaPrincipal=null;
 
-    public Manejador_Carga_Datos(File archivo, String nombreArchivo) {
-        this.archivo = archivo;
+    public Manejador_Carga_Datos(InputStream archivo, String nombreArchivo) {
+        this.archivoN = archivo;
         this.nombreArchivo = nombreArchivo;
     }
     
@@ -54,10 +56,8 @@ public class Manejador_Carga_Datos extends Thread{
     }
     public List<String> leerNuevosArchivos()throws IOException{
         try{
-            System.out.println("probe");
-            FileReader archivo1 = new FileReader(archivo); // PIDE EL ARCHIVO A SUBIR 
-            System.out.println("lei");
-            BufferedReader archivo= new BufferedReader(archivo1); // LE ENVIAMOS AL LECTOR EL ARCHIVO
+            System.out.println("aqui jejeje");
+            BufferedReader archivo= new BufferedReader(new InputStreamReader(this.archivoN)); // LE ENVIAMOS AL LECTOR EL ARCHIVO
             System.out.println("aqui");
             String LArchivo = archivo.readLine(); // LEERA LINEA POR LINEA EL ARCHIVO
             System.out.println("m");

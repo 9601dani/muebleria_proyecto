@@ -1,3 +1,4 @@
+com/mycompany/muebleria_progra/servlet/fabrica/CPieza.class
 com/mycompany/muebleria_progra/clases/Pieza_Usada.class
 com/mycompany/muebleria_progra/clases/Factura.class
 com/mycompany/muebleria_progra/servlet/admi/CreacionUsuario.class
@@ -9,11 +10,13 @@ com/mycompany/muebleria_progra/clases/Usuario.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Ensamble_Pieza.class
 com/mycompany/muebleria_progra/clases/Ensamble_Pieza.class
 com/mycompany/muebleria_progra/servlet/admi/ModificacionUsuario.class
+com/mycompany/muebleria_progra/servlet/fabrica/MPieza.class
 com/mycompany/muebleria_progra/clases/Devolucion.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Pieza_Usada.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Usuario.class
 com/mycompany/muebleria_progra/clases/Cliente.class
 com/mycompany/muebleria_progra/clases/Estado_Mueble_Ensamblado.class
+com/mycompany/muebleria_progra/servlet/venta/ReintegroVenta.class
 com/mycompany/muebleria_progra/clases/Mueble_Ensamblado.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Mueble.class
 com/mycompany/muebleria_progra/servlet/Validacion.class
@@ -22,6 +25,7 @@ com/mycompany/muebleria_progra/servlet/venta/NuevaVenta.class
 com/mycompany/muebleria_progra/servlet/InicioServlet.class
 com/mycompany/muebleria_progra/servlet/venta/NuevoCliente.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Carga_Datos.class
+com/mycompany/muebleria_progra/servlet/fabrica/DPieza.class
 com/mycompany/muebleria_progra/servlet/admi/CargaDatos.class
 com/mycompany/muebleria_progra/servlet/CerrarSesion.class
 com/mycompany/muebleria_progra/clases/Pieza.class

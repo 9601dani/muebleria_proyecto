@@ -46,7 +46,6 @@
                 <div style="font-size: 15px;">
                     <a href="/Muebleria_Progra/Administracion/creacion_usuario.jsp" class="btn btn-block"> Ingresar Nuevo Usuario</a>
                 </div>
-                
             </div> 
           </div>
           <div class="col">
@@ -63,7 +62,7 @@
           <div class="col">
             <div class="mb-4">
                 <div style="font-size: 15px;">
-                    <a href="*" class="btn btn-block"> Consulta de Reportes</a>
+                    <a href="/Muebleria_Progra/Inicio/carga.jsp" class="btn btn-block"> Carga de Archivos</a>
                 </div>
                 
             </div> 

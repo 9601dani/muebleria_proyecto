@@ -40,7 +40,7 @@
             <br>
             <form class="form" >
                 <label> Nombre mueble</label>
-                <input class="form-control" type="text" name="textbuscarm" placeholder="ingresa nombre del mueve para buscar">
+                <input class="form-control" type="text" name="textbuscarm" placeholder="ingresa nombre del mueve para buscar"  required>
                 <input class="btn btn-success" type="submit" value="BUSCAR">
                 <br>
             </form> 
