@@ -16,6 +16,7 @@ public class Factura {
     private Date fecha_compra;
     private String nit;
     private String id_mueble;
+    private String nom_usu;
 
     public Factura(int id_factura, Date fecha_compra, String nit, String id_mueble) {
         this.id_factura = id_factura;
@@ -24,10 +25,11 @@ public class Factura {
         this.id_mueble = id_mueble;
     }
 
-    public Factura(Date fecha_compra, String nit, String id_mueble) {
+    public Factura(Date fecha_compra, String nit, String id_mueble, String nom) {
         this.fecha_compra = fecha_compra;
         this.nit = nit;
         this.id_mueble = id_mueble;
+        this.nom_usu=nom;
     }
 
     public int getId_factura() {
@@ -60,6 +62,14 @@ public class Factura {
 
     public void setId_mueble(String id_mueble) {
         this.id_mueble = id_mueble;
+    }
+
+    public String getNom_usu() {
+        return nom_usu;
+    }
+
+    public void setNom_usu(String nom_usu) {
+        this.nom_usu = nom_usu;
     }
     
     

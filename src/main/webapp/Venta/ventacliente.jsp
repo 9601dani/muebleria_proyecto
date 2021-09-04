@@ -35,6 +35,26 @@
                         <label for="inputText">Id del Mueble</label>
                         <input name="textmueble" type="text" class="form-control" id="in" placeholder="(Ingresa el id del mueble)"  required>
                     </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputText">Usuario Vendedor</label>
+                        <br>
+                        <select name="selectU">
+                            <%
+                                Conexion_Sql co = new Conexion_Sql();
+                                Statement smy;
+                                ResultSet rs;
+                                smy = Conexion_Sql.getConnection().createStatement();
+                                rs = smy.executeQuery("SELECT * FROM usuario");
+                                while (rs.next()) {
+
+                                    if (rs.getInt("tipo_usuario") == 2) {
+
+                            %>
+                            <option value="<%=rs.getString ("nombre_usuario")%>"><%=rs.getString("nombre_usuario")%></option>
+                            <%}%>
+                            <%}%>
+                        </select>    
+                    </div>
                   </div>
                 </div>
             </div>

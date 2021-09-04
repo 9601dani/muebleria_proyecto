@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author daniel
  */
 public class Manejador_Factura {
-    private final String INGRESO_FACTURA="INSERT INTO factura(fecha_compra,cliente_nit,id_mueble_ensamblado ) VALUES(?,?,?);";
+    private final String INGRESO_FACTURA="INSERT INTO factura(fecha_compra,cliente_nit,id_mueble_ensamblado,usuario_venta) VALUES(?,?,?,?);";
     private final String SELECT="SELECT * FROM factura WHERE id_factura=?";
     private final String SELECT_ALL="SELECT * FROM factura";
     private final String DELETE="DELETE FROM factura WHERE id_factura=?";
@@ -32,6 +32,7 @@ public class Manejador_Factura {
             query.setDate(1, (Date)fac.getFecha_compra());
             query.setString(2,fac.getNit());
             query.setString(3, fac.getId_mueble());
+            query.setString(4, fac.getNom_usu());
             query.executeUpdate();
         } catch(java.sql.SQLIntegrityConstraintViolationException p){
             System.out.println("REVISA EL NIT DEL CLIENTE Y EL ID DEL MUEBLE");

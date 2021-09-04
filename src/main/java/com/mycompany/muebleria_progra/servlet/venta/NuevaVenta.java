@@ -81,7 +81,10 @@ public class NuevaVenta extends HttpServlet {
             out.println("<body class=\"text-center\"  style=\"background-color: beige\" >");
             out.println("<t1>" + "Hemos encontrado el cliente" + "</t1>");
             out.println("<br>");
-            request.getRequestDispatcher("/realizarventa.jsp");
+             out.println("<img class=\"mb-4\" src=\"/Muebleria_Progra/imagen/yes.png\" alt=\"\" width=\"250\" height=\"150\">");
+             out.println("<br>");
+             request.getRequestDispatcher("/realizarventa.jsp");
+             out.println(" <a class=\"btn btn-primary\"href=\"/Muebleria_Progra/Venta/ventacliente.jsp\"> Realizar Venta</a>");
             out.println("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj\" crossorigin=\"anonymous\"></script>\n");
             out.println("</body>");
             out.println("</html>");

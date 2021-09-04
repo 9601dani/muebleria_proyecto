@@ -5,11 +5,16 @@
  */
 package com.mycompany.muebleria_progra.clases;
 
+import com.mycompany.muebleria_progra.conexion.Conexion_Sql;
+import com.mycompany.muebleria_progra.manejadoresclases.Manejador_Usuario;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author daniel
  */
-public class Usuario {
+public class Usuario extends Manejador_Usuario{
     private String nombre_usuario;
     private String passsword;
     private int tipo_usuario;

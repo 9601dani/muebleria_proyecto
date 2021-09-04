@@ -36,6 +36,7 @@ public class VentaFinal extends HttpServlet {
             throws ServletException, IOException {
         String nit= request.getParameter("textnit");
         String codmueble=request.getParameter("textmueble").toUpperCase();
+        String usuarioV= request.getParameter("selectU");
         if(nit=="" || codmueble==""){
             response(response,"campos vacios",request);
         }else{
@@ -47,7 +48,7 @@ public class VentaFinal extends HttpServlet {
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                         String formattedDate = simpleDateFormat.format(date);
                         java.sql.Date date1 = java.sql.Date.valueOf(formattedDate); 
-                        Factura nf= new Factura(date1,nit,codmueble);
+                        Factura nf= new Factura(date1,nit,codmueble,usuarioV);
                         this.realizarVenta(nf, response);
                     } else {
                         response(response,"cliente no existente", request);

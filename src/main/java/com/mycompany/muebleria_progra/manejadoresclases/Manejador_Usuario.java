@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  *
  * @author daniel
  */
-public class Manejador_Usuario {
+public class Manejador_Usuario{
     private final String AÑADIR="INSERT INTO usuario (nombre_usuario, contra, tipo_usuario) VALUES (?,?,?);";
     private final String SELECT="SELECT * FROM usuario WHERE nombre_usuario=?"; 
     private final String SELECT_ALL="SELECT * FROM usuario"; 
@@ -24,6 +24,7 @@ public class Manejador_Usuario {
     Connection conexion;
     String senha;
 
+    
 
     public Manejador_Usuario() {
         Conexion_Sql con = new Conexion_Sql();
@@ -101,7 +102,7 @@ public class Manejador_Usuario {
         }
     }
      
-      public int update(Usuario usuario){
+    public int update(Usuario usuario){
         PreparedStatement query=null;
        try {
             query= Conexion_Sql.conexion.prepareStatement(UPDATE);
