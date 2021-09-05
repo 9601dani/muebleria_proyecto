@@ -64,6 +64,26 @@
         <servlet-name>Ensamblar</servlet-name>
         <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.Ensamblar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteVendedorMayor</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteVendedorMayor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteDev</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteDev</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteMuebleMas</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteMuebleMas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteMuebleMenos</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteMuebleMenos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteVentas</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteVentas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InicioServlet</servlet-name>
         <url-pattern>/InicioServlet</url-pattern>
@@ -127,6 +147,26 @@
     <servlet-mapping>
         <servlet-name>Ensamblar</servlet-name>
         <url-pattern>/Ensamblar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteVendedorMayor</servlet-name>
+        <url-pattern>/ReporteVendedorMayor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteDev</servlet-name>
+        <url-pattern>/ReporteDev</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteMuebleMas</servlet-name>
+        <url-pattern>/ReporteMuebleMas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteMuebleMenos</servlet-name>
+        <url-pattern>/ReporteMuebleMenos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteVentas</servlet-name>
+        <url-pattern>/ReporteVentas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -65,7 +65,7 @@
                     <tr>
                         <td class="text-center"><%= rs.getString("nombre_mueble")%></td>
                         <td><%=rs.getInt("cantidad")%></td>
-                       <%=nom+=rs.getString("nombre_mueble")%>
+                        <%=nom+=rs.getString("nombre_mueble")%>
                         <%=cant=rs.getString("cantidad")%>
                     </tr>
                     <%}%>
@@ -114,7 +114,11 @@
                    Conexion_Sql ca= new Conexion_Sql(1);
                 %>
         </div>
-        
+            <br>
+            <br>
+            <div class="text-center">
+                <a href="/Muebleria_Progra/ReporteMuebleMas?f1=<%=f1%>&f2=<%=f2%>" class="btn btn-primary" > EXPORTAR REPORTE</a>
+            </div>
         
         
                 <script src="js/jquery.js" type="text/javascript"></script>

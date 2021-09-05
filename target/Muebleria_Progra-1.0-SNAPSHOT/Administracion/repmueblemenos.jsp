@@ -114,7 +114,11 @@
                    Conexion_Sql ca= new Conexion_Sql(1);
                 %>
         </div>
-        
+                    <br>
+            <br>
+            <div class="text-center">
+                <a href="/Muebleria_Progra/ReporteMuebleMenos?f1=<%=f1%>&f2=<%=f2%>" class="btn btn-primary" > EXPORTAR REPORTE</a>
+            </div>
         
         
                 <script src="js/jquery.js" type="text/javascript"></script>

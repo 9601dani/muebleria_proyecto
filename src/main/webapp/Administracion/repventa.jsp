@@ -83,7 +83,11 @@
                    Conexion_Sql con= new Conexion_Sql(1);
                 %>
         </div>
-       
+                   <br>
+            <br>
+            <div class="text-center">
+                <a href="/Muebleria_Progra/ReporteVentas?f1=<%=f1%>&f2=<%=f2%>" class="btn btn-primary" > EXPORTAR REPORTE</a>
+            </div>
                 <script src="js/jquery.js" type="text/javascript"></script>
                 <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

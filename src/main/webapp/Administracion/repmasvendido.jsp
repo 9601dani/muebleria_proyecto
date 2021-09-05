@@ -4,6 +4,8 @@
     Author     : daniel
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="com.mycompany.muebleria_progra.conexion.Conexion_Sql"%>
@@ -17,8 +19,19 @@
    
     </head>
     <body>
+         
+                    <%
+                        String datosObte="";
+                    %>
         <h3 class="text-center">Reporte de Usuario con mas ventas</h3>
                 <%
+                   List<Object> listrepmasvendido= new ArrayList();
+                %>
+
+                    
+                
+                <%
+               
                    Conexion_Sql co= new Conexion_Sql();
                    Statement smy;
                    ResultSet rs;
@@ -53,8 +66,11 @@
             <table class="table table-bordered" id="tablaDatos">
                 <thead>
                     <tr>
+                        
                         <th class="text-center">Usuario</th>
                         <th class="text-center">Cantidad de Ventas</th>
+                        <% datosObte+= "Usuario , Cantidad\n" ;%>
+
                 </thead>
                 <tbody id="tbodys">
                     <%
@@ -64,7 +80,8 @@
                     <tr>
                         <td class="text-center"><%= rs.getString("usuario_venta")%></td>
                         <td><%=rs.getInt("cantidad")%></td>
-                        
+                        <% datosObte+= ""+rs.getString("usuario_venta")+","+rs.getInt("cantidad")+"\n";%>
+
                     </tr>
                     <%}%>
                 </tbody>
@@ -78,7 +95,7 @@
         <div class="text-center">
             <h4> A continuacion mostramos las ventas del usuario <%=nom%> :</h4>
         </div>
-
+            
                 <%
                    Conexion_Sql po= new Conexion_Sql();
                    Statement sm;
@@ -86,10 +103,13 @@
                    sm=Conexion_Sql.getConnection().createStatement();
                    r=smy.executeQuery("SELECT f.fecha_compra, f.id_mueble_ensamblado, me.nombre_mueble, m.precio FROM factura as f INNER JOIN mueble_ensamblado as me INNER JOIN mueble as m WHERE usuario_venta="+"'"+nom+"'"+" AND f.id_mueble_ensamblado= me.id_mueble_ensamblado AND me.nombre_mueble=m.nombre_mueble"); 
                 %>
+               
         <div class="container">
             <table class="table table-bordered" id="tablaDatos">
                 <thead>
                     <tr>
+                    <% datosObte+= "Fecha Compra, Cantidad, Codigo Mueble, Nombre, Precio\n" ;%>
+
                         <th class="text-center">Fecha Compra</th>
                         <th class="text-center">Codigo Mueble</th>
                         <th class="text-center">Nombre</th>
@@ -104,7 +124,8 @@
                         <td><%=r.getString("id_mueble_ensamblado")%></td>
                         <td><%= r.getString("nombre_mueble")%></td>
                         <td><%=r.getBigDecimal("precio")%></td>
-                        
+                        <% datosObte+= r.getDate("fecha_compra")+","+r.getString("id_mueble_ensamblado")+","+r.getString("nombre_mueble")+","+r.getBigDecimal("precio")+"\n";%>
+
                     </tr>
                     <%}%>
                 </tbody>
@@ -113,6 +134,12 @@
                    Conexion_Sql cm= new Conexion_Sql(1);
                 %>
         </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <a href="/Muebleria_Progra/ReporteVendedorMayor?datos=<%=nom%>&f1=<%=f1%>&f2=<%=f2%>" class="btn btn-primary" > EXPORTAR REPORTE</a>
+            </div>
+            
                 <script src="js/jquery.js" type="text/javascript"></script>
                 <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
