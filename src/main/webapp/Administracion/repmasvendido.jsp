@@ -17,7 +17,7 @@
    
     </head>
     <body>
-        <h3 class="text-center">Reporte de Devoluciones</h3>
+        <h3 class="text-center">Reporte de Usuario con mas ventas</h3>
                 <%
                    Conexion_Sql co= new Conexion_Sql();
                    Statement smy;

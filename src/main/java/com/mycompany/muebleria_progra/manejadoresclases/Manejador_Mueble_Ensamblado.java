@@ -37,6 +37,7 @@ public class Manejador_Mueble_Ensamblado {
     
     public String verificacion(Mueble_Ensamblado mueble)throws SQLException {
         String retorno="";
+        System.out.println("entree a verificar");
         System.out.println(mueble.getNombre_mueble());
         Manejador_Ensamble_Pieza mep = new Manejador_Ensamble_Pieza();
         ResultSet datosObtenidos_piezas= mep.select_especial(mueble.getNombre_mueble());
@@ -45,9 +46,10 @@ public class Manejador_Mueble_Ensamblado {
         double costo_fabricacion = 0;
         try {
             while (datosObtenidos_piezas.next()) {
-                piezas_necesarias.add(new Ensamble_Pieza(datosObtenidos_piezas.getInt("cantidad"),datosObtenidos_piezas.getString("nombre_mueble"), datosObtenidos_piezas.getString("tipo_pieza"), datosObtenidos_piezas.getBigDecimal("pieza_costo")));
+                piezas_necesarias.add(new Ensamble_Pieza(datosObtenidos_piezas.getInt("cantidad"), datosObtenidos_piezas.getString("tipo_pieza"),datosObtenidos_piezas.getString("nombre_mueble")));
             }
             if (piezas_necesarias.size() > 0) {
+                System.out.println("j");
                 ArrayList<ResultSet> resultado_piezas = new ArrayList<>(); 
                 ArrayList<Pieza> piezas = new ArrayList<>();
                 Manejador_Pieza mp = new Manejador_Pieza();
@@ -55,14 +57,17 @@ public class Manejador_Mueble_Ensamblado {
                 for (Ensamble_Pieza piezas_para_ensamble : piezas_necesarias) {
                     resultado_piezas.add(mp.select_especial(piezas_para_ensamble.getTipo_pieza())); 
                 }
+                System.out.println(resultado_piezas.size());
 
                 for (int i = 0; i < resultado_piezas.size(); i++) { 
+                    System.out.println("a");
                     while (resultado_piezas.get(i).next()) {
-        
+                        System.out.println("ñ");
                         piezas.add(new Pieza(resultado_piezas.get(i).getString("tipo_pieza"), resultado_piezas.get(i).getBigDecimal("costo"), resultado_piezas.get(i).getInt("cantidad")));
                     }
+                    System.out.println(i+"kakaka");
                 }
-         
+                System.out.println(piezas.size()+" jeje");
                 if (piezas.size() > 0) {
                     int piezasEncontradas = 0;
                     for (Ensamble_Pieza receta : piezas_necesarias) { 
@@ -111,11 +116,13 @@ public class Manejador_Mueble_Ensamblado {
                             update.update(pieza_actualizada);
                         }
                         retorno+="SE GUARDO";
-                        añadir(mueble, BigDecimal.valueOf(costo_fabricacion));
+                        Manejador_Mueble_Ensamblado n= new Manejador_Mueble_Ensamblado();
+                        n.añadir(mueble, BigDecimal.valueOf(costo_fabricacion));
                     } else {
                         System.err.println("\n\n\n\n\nNo posee todas las piezas para la elaboración del mueble. error 2");
                     }
                 }
+                System.out.println("p");
             } else {
                 System.out.println("NO HAY PIEZAS ASIGNADAS PARA EL MUEBLE");
             }
@@ -124,6 +131,7 @@ public class Manejador_Mueble_Ensamblado {
             System.out.println("error");
             retorno+="NO SE GUARDO";
         }
+        System.out.println("retorno es "+retorno);
         return retorno;
         
     }

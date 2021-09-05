@@ -190,12 +190,16 @@ public class Manejador_Carga_Datos extends Thread{
                 String mueble = quitarComillas(datosObtenidos[0]);
                 me = new Mueble_Ensamblado(fecha, usuario, mueble);
                 try{
-                     mme.verificacion(me);
+                    String re= mme.verificacion(me);
+                    
+                    if(re.equalsIgnoreCase("SE GUARDO")){
+                        
+                    }else{
+                      errores.add("NO SE PUDO GUARDAR PORQUE NO HAY PIEZAS: "+lineaPrincipal);
+                    }
                 }catch(SQLException e){
                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
                 }
-               
-
                 System.out.println(lineaPrincipal + mme.verificacion(me));
             }
             // SI ES CLIENTE

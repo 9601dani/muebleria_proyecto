@@ -53,6 +53,17 @@
                     <div class="mb-4">
                         <div style="font-size: 15px;">
                             <h3>
+                                <a href="/Muebleria_Progra/Administracion/creacionmueble.jsp" class="btn btn-block"> Creacion De Mueble</a>
+                            </h3>
+
+                        </div>
+
+                    </div> 
+                </div>
+                <div class="col">
+                    <div class="mb-4">
+                        <div style="font-size: 15px;">
+                            <h3>
                                 <a href="/Muebleria_Progra/Administracion/mod_usuario.jsp" class="btn btn-block"> Administracion de usuarios</a>
                             </h3>
 
@@ -78,6 +89,13 @@
                 <div class="col">
                     <div class="mb-4">
                         <div style="font-size: 15px;">
+                            <a href="/Muebleria_Progra/Administracion/ensamblepieza.jsp" class="btn btn-block"> Ensamble Pieza</a>
+                        </div>
+                    </div> 
+                </div>   
+                <div class="col">
+                    <div class="mb-4">
+                        <div style="font-size: 15px;">
                             <a href="/Muebleria_Progra/Administracion/repdevo.jsp" class="btn btn-block"> Reporte Devoluciones</a>
                         </div>
                     </div> 
@@ -85,7 +103,7 @@
                 <div class="col">
                     <div class="mb-4">
                         <div style="font-size: 15px;">
-                            <a href="/Muebleria_Progra/Administracion/repmasvendido.jsp" class="btn btn-block"> Reporte Devoluciones</a>
+                            <a href="/Muebleria_Progra/Administracion/repmasvendido.jsp" class="btn btn-block"> Reporte Usuario con mas Ventas</a>
                         </div>
                     </div> 
                 </div>   

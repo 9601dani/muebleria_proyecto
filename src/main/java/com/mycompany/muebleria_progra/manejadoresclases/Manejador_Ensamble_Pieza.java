@@ -16,12 +16,12 @@ import java.util.logging.Logger;
  * @author daniel
  */
 public class Manejador_Ensamble_Pieza {
-    private final String INGRESO="INSERT INTO ensamble_pieza (cantidad, nombre_mueble,tipo_pieza,pieza_costo) VALUES(?,?,?,?);";
+    private final String INGRESO="INSERT INTO ensamble_pieza (cantidad, nombre_mueble,tipo_pieza) VALUES(?,?,?)";
     private final String SELECT="SELECT * FROM ensamble_pieza WHERE nombre_mueble = ? AND tipo_pieza = ?";
     private final String SELECT_ALL="SELECT * FROM ensamble_pieza";
     private final String DELETE="DELETE FROM ensamble_pieza WHERE nombre_mueble=? AND tipo_pieza=?";
     private final String UPDATE="UPDATE ensamble_pieza SET cantidad=? WHERE nombre_mueble=? AND tipo_pieza=? AND pieza_costo=?";
-    private final String SELECT_ESPECIAL="SELECT cantidad,nombre_mueble,tipo_pieza,pieza_costo FROM ensamble_pieza WHERE nombre_mueble=?";
+    private final String SELECT_ESPECIAL="SELECT * FROM ensamble_pieza WHERE nombre_mueble=?";
     private Connection conexion;
 
     public Manejador_Ensamble_Pieza() {
@@ -30,12 +30,12 @@ public class Manejador_Ensamble_Pieza {
     }
     
     public int añadir(Ensamble_Pieza pieza)throws SQLException{
+         PreparedStatement query=null;
         try {
-            PreparedStatement query= Conexion_Sql.conexion.prepareStatement(INGRESO);
+            query= Conexion_Sql.conexion.prepareStatement(INGRESO);
             query.setInt(1, pieza.getCantidad());
             query.setString(2,pieza.getNombre_mueble());
             query.setString(3, pieza.getTipo_pieza());
-            query.setBigDecimal(4, pieza.getPieza_costo());
             query.executeUpdate();
         } catch(java.sql.SQLIntegrityConstraintViolationException p){
             System.out.println(p);
@@ -66,7 +66,7 @@ public class Manejador_Ensamble_Pieza {
     
     public ResultSet select_especial(String nombre_mueble){
         ResultSet datosObtenidos=null;
-        PreparedStatement query;
+        PreparedStatement query=null;
         try {
             query = Conexion_Sql.conexion.prepareStatement(SELECT_ESPECIAL);
             query.setString(1, nombre_mueble);
@@ -113,7 +113,6 @@ public class Manejador_Ensamble_Pieza {
             query.setInt(1, pieza.getCantidad());
             query.setString(2,pieza.getNombre_mueble());
             query.setString(3, pieza.getTipo_pieza());
-            query.setBigDecimal(4, pieza.getPieza_costo());
             query.executeUpdate();
         } catch(java.sql.SQLIntegrityConstraintViolationException p){
             System.out.println(p);

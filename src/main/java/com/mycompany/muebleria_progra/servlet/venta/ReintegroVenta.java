@@ -70,6 +70,7 @@ public class ReintegroVenta extends HttpServlet {
                             }catch(SQLException p){
                             }
                         } else {
+                            response(response, "tiempo fuera", request);
                         }
                     } else {
                         response(response, "factura no existe", request);

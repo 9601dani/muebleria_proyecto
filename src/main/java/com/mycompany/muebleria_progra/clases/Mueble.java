@@ -5,13 +5,14 @@
  */
 package com.mycompany.muebleria_progra.clases;
 
+import com.mycompany.muebleria_progra.manejadoresclases.Manejador_Mueble;
 import java.math.BigDecimal;
 
 /**
  *
  * @author daniel
  */
-public class Mueble {
+public class Mueble extends Manejador_Mueble{
     private String nombre_mueble;
     private BigDecimal precio;
 
@@ -19,6 +20,10 @@ public class Mueble {
         this.nombre_mueble = nombre_mueble;
         this.precio = precio;
     }
+
+    public Mueble() {
+    }
+    
 
     public String getNombre_mueble() {
         return nombre_mueble;

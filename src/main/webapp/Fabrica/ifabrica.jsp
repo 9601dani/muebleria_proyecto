@@ -56,7 +56,7 @@
                     <div class="mb-3">
                         <div style="font-size: 15px;">
                             <h3>
-                                <a href="*" class="btn"> Ensamblar Mueble</a>
+                                <a href="/Muebleria_Progra/Fabrica/ensamblarm.jsp" class="btn"> Ensamblar Mueble</a>
                             </h3>
 
                         </div>

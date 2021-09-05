@@ -35,7 +35,7 @@
                 <div class="form-group required">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Nombre de Usuario *</label>
-                        <input name="textusuario" type="text" class="form-control" id="inputEmail4" placeholder="ejem: 'Nombre1997'">
+                        <input name="textusuario" type="text" class="form-control" id="inputEmail4" placeholder="ejem: 'Nombre1997'" required>
                     </div>
                 </div>   
                 <p>
@@ -43,7 +43,7 @@
                 <p>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Contraseña *</label>
-                <input name="textpass"type="password" class="form-control" id="inputPassword4" placeholder="ejem: 'Password.123'">
+                <input name="textpass"type="text" class="form-control" id="inputPassword4" placeholder="ejem: 'Password.123'" required>
               </div>
                 <p>
                 <p>

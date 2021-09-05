@@ -52,6 +52,18 @@
         <servlet-name>CPieza</servlet-name>
         <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.CPieza</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NMueble</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.NMueble</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EnsamblePieza</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.EnsamblePieza</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ensamblar</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.fabrica.Ensamblar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InicioServlet</servlet-name>
         <url-pattern>/InicioServlet</url-pattern>
@@ -103,6 +115,18 @@
     <servlet-mapping>
         <servlet-name>CPieza</servlet-name>
         <url-pattern>/CPieza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NMueble</servlet-name>
+        <url-pattern>/NMueble</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnsamblePieza</servlet-name>
+        <url-pattern>/EnsamblePieza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ensamblar</servlet-name>
+        <url-pattern>/Ensamblar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

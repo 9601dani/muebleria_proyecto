@@ -2,7 +2,10 @@
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/clases/Pieza_Usada.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/Validacion.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/admi/CargaDatos.java
+/home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/fabrica/Ensamblar.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/manejadoresclases/Manejador_Mueble.java
+/home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/admi/NMueble.java
+/home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/admi/EnsamblePieza.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/fabrica/CPieza.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/clases/Mueble_Ensamblado.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/clases/Pieza.java
@@ -31,6 +34,5 @@
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/InicioServlet.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/CerrarSesion.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/fabrica/DPieza.java
-/home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/consultas/Consulta_Ventas.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/venta/NuevoCliente.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/manejadoresclases/Manejador_Pieza_Usada.java

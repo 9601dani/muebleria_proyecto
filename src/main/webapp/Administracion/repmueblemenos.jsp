@@ -17,7 +17,7 @@
    
     </head>
     <body>
-        <h3 class="text-center">Reporte Mueble Mas Vendido</h3>
+        <h3 class="text-center">Reporte Mueble Menos Vendido</h3>
                 <%
                    Conexion_Sql co= new Conexion_Sql();
                    Statement smy;
@@ -81,7 +81,7 @@
                    ResultSet r;
                    sm=Conexion_Sql.getConnection().createStatement();
                    
-                   r=sm.executeQuery("SELECT f.fecha_compra, me.id_mueble_ensamblado, me.nombre_mueble, m.precio FROM factura as f INNER JOIN mueble_ensamblado as me INNER JOIN mueble as m WHERE me.id_estado_mueble='2'  AND me.id_mueble_ensamblado= f.id_mueble_ensamblado AND f.fecha_compra BETWEEN"+ "'"+f1+"'" +" AND " +"'" +f2+"'"); 
+                   r=sm.executeQuery("SELECT f.fecha_compra, me.id_mueble_ensamblado, me.nombre_mueble, m.precio FROM factura as f INNER JOIN mueble_ensamblado as me INNER JOIN mueble as m WHERE me.id_estado_mueble='2'  AND me.id_mueble_ensamblado= f.id_mueble_ensamblado AND f.fecha_compra BETWEEN"+ "'"+f1+"'" +" AND " +"'" +f2+"' AND me.nombre_mueble="+"'"+ nom+"'"); 
              %>
         <div class="container">
             <table class="table table-bordered" id="tablaDatos">

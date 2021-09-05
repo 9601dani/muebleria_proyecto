@@ -2,13 +2,16 @@ com/mycompany/muebleria_progra/servlet/fabrica/CPieza.class
 com/mycompany/muebleria_progra/clases/Pieza_Usada.class
 com/mycompany/muebleria_progra/clases/Factura.class
 com/mycompany/muebleria_progra/servlet/admi/CreacionUsuario.class
+com/mycompany/muebleria_progra/servlet/fabrica/Ensamblar.class
 com/mycompany/muebleria_progra/conexion/Conexion_Sql.class
 com/mycompany/muebleria_progra/clases/Mueble.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Cliente.class
 com/mycompany/muebleria_progra/clases/Tipo_Usuario.class
 com/mycompany/muebleria_progra/clases/Usuario.class
+com/mycompany/muebleria_progra/servlet/admi/NMueble.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Ensamble_Pieza.class
 com/mycompany/muebleria_progra/clases/Ensamble_Pieza.class
+com/mycompany/muebleria_progra/servlet/admi/EnsamblePieza.class
 com/mycompany/muebleria_progra/servlet/admi/ModificacionUsuario.class
 com/mycompany/muebleria_progra/servlet/fabrica/MPieza.class
 com/mycompany/muebleria_progra/clases/Devolucion.class
@@ -33,4 +36,3 @@ com/mycompany/muebleria_progra/manejadoresclases/Manejador_Factura.class
 com/mycompany/muebleria_progra/servlet/venta/VentaFinal.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Pieza.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Devolucion.class
-com/mycompany/muebleria_progra/consultas/Consulta_Ventas.class

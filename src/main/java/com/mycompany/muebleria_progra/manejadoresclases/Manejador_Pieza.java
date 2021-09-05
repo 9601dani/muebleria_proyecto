@@ -47,7 +47,7 @@ public class Manejador_Pieza {
      public ResultSet select_especial(String tipo_pieza){
         ResultSet datosObtenidos=null;
         
-        PreparedStatement query;
+        PreparedStatement query=null;
         try {
             query = Conexion_Sql.conexion.prepareStatement(SELECT_ESPECIAL);
             query.setString(1, tipo_pieza);
