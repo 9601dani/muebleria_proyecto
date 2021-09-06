@@ -112,3 +112,4 @@ INSERT INTO tipo_usuario VALUES('3','Fabricador');
 INSERT INTO tipo_usuario VALUES('4','Cancelado');
 INSERT INTO estado_mueble_ensamblado VALUES('1','Disponible');
 INSERT INTO estado_mueble_ensamblado VALUES('2','Vendido');
+INSERT INTO usuario VALUES('admin','Admin.123','1');
