@@ -5,6 +5,7 @@
  */
 package com.mycompany.muebleria_progra.clases;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**

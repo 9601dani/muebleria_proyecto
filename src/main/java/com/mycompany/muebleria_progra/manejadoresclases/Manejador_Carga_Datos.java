@@ -128,7 +128,7 @@ public class Manejador_Carga_Datos extends Thread{
                     try{
                         mu.añadir(us);
                     } catch(SQLException e){
-                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                     }
 
                 System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
@@ -144,7 +144,7 @@ public class Manejador_Carga_Datos extends Thread{
                     mp.añadir(pieza);
                     System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
                 }catch(SQLException e){
-                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                 }
             }
             // SI ES MUEBLE
@@ -157,7 +157,7 @@ public class Manejador_Carga_Datos extends Thread{
                 try{
                     mm.añadir(mueble);
                 }catch(SQLException e){
-                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                 }
                 
                 System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
@@ -174,7 +174,7 @@ public class Manejador_Carga_Datos extends Thread{
                 try{
                     mep.añadir(ep);
                 }catch(SQLException e){
-                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                    errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                 }
                 
                 System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
@@ -198,7 +198,7 @@ public class Manejador_Carga_Datos extends Thread{
                       errores.add("NO SE PUDO GUARDAR PORQUE NO HAY PIEZAS: "+lineaPrincipal);
                     }
                 }catch(SQLException e){
-                   errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                   errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                 }
                 System.out.println(lineaPrincipal + mme.verificacion(me));
             }
@@ -216,7 +216,7 @@ public class Manejador_Carga_Datos extends Thread{
                     try{
                          mc.añadir(cliente);
                     }catch(SQLException e){
-                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                     }
                    
                     System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");
@@ -232,9 +232,9 @@ public class Manejador_Carga_Datos extends Thread{
                     try{
                         mc.añadir_extenso(cliente);
                     }catch(SQLException e){
-                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                     errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "PARECE QUE YA EXISTE");
                     }catch(ArrayIndexOutOfBoundsException p){
-                        errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal);
+                        errores.add("NO SE PUDO GUARDAR: "+lineaPrincipal+ "NO ESTAN LOS CAMPOS REQUERIDOS");
                     }
                     
                     System.out.println(lineaPrincipal + " ***GUARDADA CON EXITO ***");

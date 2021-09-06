@@ -31,19 +31,11 @@ public class Manejador_Ensamble_Pieza {
     
     public int añadir(Ensamble_Pieza pieza)throws SQLException{
          PreparedStatement query=null;
-        try {
             query= Conexion_Sql.conexion.prepareStatement(INGRESO);
             query.setInt(1, pieza.getCantidad());
             query.setString(2,pieza.getNombre_mueble());
             query.setString(3, pieza.getTipo_pieza());
             query.executeUpdate();
-        } catch(java.sql.SQLIntegrityConstraintViolationException p){
-            System.out.println(p);
-            //System.out.println("REVISA LA EXISTENCIA DEL NOMBRE DEL MUEBLE, EL TIPO DE PIEZA, Y EL COSTO DE PIEZA");
-        } 
-        catch (SQLException ex) {
-             System.out.println(ex);
-        }
          Conexion_Sql con = new Conexion_Sql(1);
         return 0;
     }

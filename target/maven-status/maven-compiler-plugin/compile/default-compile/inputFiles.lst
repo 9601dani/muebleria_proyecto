@@ -25,6 +25,7 @@
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/fabrica/MPieza.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/manejadoresclases/Manejador_Factura.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/clases/Cliente.java
+/home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/servlet/admi/ReporteGeneral.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/manejadoresclases/Manejador_Cliente.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/clases/Estado_Mueble_Ensamblado.java
 /home/daniel/NetBeansProjects/Muebleria_Progra/src/main/java/com/mycompany/muebleria_progra/manejadoresclases/Manejador_Devolucion.java

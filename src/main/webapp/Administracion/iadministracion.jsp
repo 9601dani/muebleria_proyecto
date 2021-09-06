@@ -121,7 +121,13 @@
                         </div>
                     </div> 
                 </div>  
-
+                                <div class="col">
+                    <div class="mb-4">
+                        <div style="font-size: 15px;">
+                            <a href="/Muebleria_Progra/Administracion/repgananciasvendedor.jsp" class="btn btn-block"> Exporte De Rep Generales</a>
+                        </div>
+                    </div> 
+                </div> 
             </div>
         </div>
 

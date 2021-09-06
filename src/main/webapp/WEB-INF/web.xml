@@ -84,6 +84,10 @@
         <servlet-name>ReporteVentas</servlet-name>
         <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteVentas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteGeneral</servlet-name>
+        <servlet-class>com.mycompany.muebleria_progra.servlet.admi.ReporteGeneral</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InicioServlet</servlet-name>
         <url-pattern>/InicioServlet</url-pattern>
@@ -167,6 +171,10 @@
     <servlet-mapping>
         <servlet-name>ReporteVentas</servlet-name>
         <url-pattern>/ReporteVentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteGeneral</servlet-name>
+        <url-pattern>/ReporteGeneral</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

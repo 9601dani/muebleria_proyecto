@@ -53,8 +53,11 @@ public class Manejador_Mueble_Ensamblado {
                 ArrayList<ResultSet> resultado_piezas = new ArrayList<>(); 
                 ArrayList<Pieza> piezas = new ArrayList<>();
                 Manejador_Pieza mp = new Manejador_Pieza();
-
+                System.out.println("m");
                 for (Ensamble_Pieza piezas_para_ensamble : piezas_necesarias) {
+                    System.out.println("aqui");
+                    System.out.println(piezas_para_ensamble.getTipo_pieza());
+
                     resultado_piezas.add(mp.select_especial(piezas_para_ensamble.getTipo_pieza())); 
                 }
                 System.out.println(resultado_piezas.size());
@@ -131,13 +134,13 @@ public class Manejador_Mueble_Ensamblado {
             System.out.println("error");
             retorno+="NO SE GUARDO";
         }
+         Conexion_Sql co = new Conexion_Sql(1);
         System.out.println("retorno es "+retorno);
         return retorno;
         
     }
     
     public int añadir(Mueble_Ensamblado mueble, BigDecimal costo)throws SQLException{
-        try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_M_E);
             query.setString(1, mueble.getId_mueble_ensamblado());
             query.setDate(2, java.sql.Date.valueOf(new SimpleDateFormat(FORMATO_SQL).format(mueble.getFecha_ensamble())));
@@ -146,10 +149,6 @@ public class Manejador_Mueble_Ensamblado {
             query.setString(5, mueble.getNombre_mueble());
             query.setBigDecimal(6, costo);
             query.executeUpdate();
-        } 
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
         Conexion_Sql co= new Conexion_Sql(1);
         return 0;
         

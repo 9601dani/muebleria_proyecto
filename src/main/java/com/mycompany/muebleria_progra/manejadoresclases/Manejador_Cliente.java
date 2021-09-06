@@ -29,21 +29,17 @@ public class Manejador_Cliente {
     
     
     public int añadir(Cliente cliente)throws SQLException{
-        try {
+
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_CLIENTE);
             query.setString(1, cliente.getNit());
             query.setString(2, cliente.getNombre());
             query.setString(3, cliente.getDireccion());
             query.executeUpdate();
-        } catch (SQLException ex) {
-             System.out.println(ex);
-            return 1;
-        }
         Conexion_Sql con = new Conexion_Sql(1);
         return 0;
     }
     public int añadir_extenso(Cliente cliente) throws SQLException{
-        try {
+
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_CLIENTE_EXTENSO);
             query.setString(1, cliente.getNit());
             query.setString(2, cliente.getNombre());
@@ -51,10 +47,6 @@ public class Manejador_Cliente {
             query.setString(4, cliente.getMunicipio());
             query.setString(5, cliente.getDepartamento());
             query.executeUpdate();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            return 1;
-        }
         Conexion_Sql con = new Conexion_Sql(1);
         return 0;
     }

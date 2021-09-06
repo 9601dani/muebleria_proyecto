@@ -27,15 +27,10 @@ public class Manejador_Mueble {
     }
     
     public int añadir(Mueble mueble)throws SQLException{
-         try {
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_MUEBLE);
             query.setString(1, mueble.getNombre_mueble());
             query.setBigDecimal(2, mueble.getPrecio());
             query.executeUpdate();
-        } 
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
          Conexion_Sql co= new Conexion_Sql(1);
         return 0;
     }

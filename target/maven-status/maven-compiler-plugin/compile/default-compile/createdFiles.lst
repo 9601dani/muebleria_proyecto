@@ -19,6 +19,7 @@ com/mycompany/muebleria_progra/servlet/admi/ReporteVendedorMayor.class
 com/mycompany/muebleria_progra/servlet/fabrica/MPieza.class
 com/mycompany/muebleria_progra/clases/Devolucion.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Pieza_Usada.class
+com/mycompany/muebleria_progra/servlet/admi/ReporteGeneral.class
 com/mycompany/muebleria_progra/manejadoresclases/Manejador_Usuario.class
 com/mycompany/muebleria_progra/clases/Cliente.class
 com/mycompany/muebleria_progra/clases/Estado_Mueble_Ensamblado.class

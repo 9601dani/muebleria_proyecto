@@ -33,9 +33,9 @@ public class Conexion_Sql {
                 
             } 
                Class.forName("com.mysql.cj.jdbc.Driver");
-                String url = "jdbc:mysql://localhost:3306/muebleria_proyecto";// AL FINAL VA EL NOMBRE DE LA BASE DE DATOS
-                String user = "root";
-                String password = "Daniel.123";
+                String url = "jdbc:mysql://localhost:3306/muebleria_proyecto_final";// AL FINAL VA EL NOMBRE DE LA BASE DE DATOS
+                String user = "admin";
+                String password = "Admin.123";
                 conexion = DriverManager.getConnection(url, user, password);
         }catch (SQLException ex) {
             System.out.println(ex);

@@ -26,6 +26,7 @@
             <table class="table table-bordered" id="tablaDatos">
                 <% 
                 List<String> errores = (ArrayList<String>)request.getAttribute("errores");
+                System.out.println(errores.size());
                 %>
                 <thead>
                     <tr>

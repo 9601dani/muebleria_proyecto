@@ -30,16 +30,13 @@ public class Manejador_Pieza {
     }
     
     public int añadir(Pieza pieza)throws SQLException{
-        try {
+
             PreparedStatement query= Conexion_Sql.conexion.prepareStatement(AÑADIR_PIEZA);
             query.setString(1, pieza.getTipo_pieza());
             query.setBigDecimal(2, pieza.getCosto());
             query.setInt(3, pieza.getCantidad());
             query.executeUpdate();
-        } 
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
+
         Conexion_Sql co = new Conexion_Sql(1);
         return 0;
     }
@@ -54,8 +51,9 @@ public class Manejador_Pieza {
             datosObtenidos=query.executeQuery();
         } catch (SQLException ex) {
             System.out.println(ex);
+            System.out.println("aqui quede bien");
         }
-        Conexion_Sql co = new Conexion_Sql(1);
+
        return datosObtenidos;
     }
     
